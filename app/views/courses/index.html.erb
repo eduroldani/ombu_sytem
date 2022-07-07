@@ -1,14 +1,18 @@
+<div class="container">
 
   <% @courses.each do |course| %>
-    <div class="card-trip">
+    <div class="card-trip mt-5">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
     <div class="card-trip-infos">
       <div>
-        <h2><%=course.name%></h2>
-        <p><%=course.short_description%></p>
-        <%= link_to "Ver Curso", course_path(course) %>
+        <h2>Nombre: <%=course.name%></h2>
+        <p>Descripcion Corta: <%=course.short_description%></p>
+        <p>Proxima Fecha: <%=course.date%></p>
+        <%= link_to "Ver Mas", course_path(course) %>
       </div>
 
     </div>
     </div>
   <% end %>
+
+</div>

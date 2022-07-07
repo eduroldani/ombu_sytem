@@ -4,24 +4,29 @@
       <%= image_tag "logo.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div>
-      <ul class="navbar-nav me-auto in-line ">
+      <ul class="list-group list-group-horizontal">
         <% if user_signed_in? %>
-          <li class="nav-item active in-line">
-            <%= link_to "Inicio", "/", class: "nav-link" %>
-            <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-             <% if current_user.is_admin? %>
-               <%= link_to "Agregar Nuevo Curso", new_course_path %>
-             <% end %>
+            <li class="nav-item p-1"><%= link_to "Inicio", "/"%></li>
+            <li class="nav-item p-1">
+            <%= link_to "¿Donde Estamos?", "https://g.page/ombu-hub?share", target: "_blank" %>
           </li>
+            <li class="nav-item p-1"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete%></li>
+            <li class="nav-item p-1"><% if current_user.is_admin? %>
+               <%= link_to "Agregar Nuevo Curso", new_course_path %></li>
+
+          <% end %>
         <% else %>
+
+        <ul class= "list-group list-group-horizontal" >
+          <li class="nav-item">
+            <%= link_to "¿Donde Estamos?", "https://g.page/ombu-hub?share", class: "nav-link", target: "_blank" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Iniciar Sesion", new_user_session_path, class: "nav-link" %>
           </li>
+
+        </ul>
         <% end %>
       </ul>
     </div>

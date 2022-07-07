@@ -11,6 +11,10 @@
   width: 40px;
 }
 
-.in-line{
-    display: inline;
-  }
+ul {
+  list-style-type: none;
+}
+
+.nav-link{
+  color: $gray
+}
