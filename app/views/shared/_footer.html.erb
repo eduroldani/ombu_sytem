@@ -4,7 +4,23 @@
     <a href="https://www.facebook.com/ombuhub"><i class="fab fa-facebook"></i></a>
     <a href="https://www.linkedin.com/company/ombu-hub"><i class="fab fa-linkedin"></i></a>
   </div>
+
   <div class="footer-copyright">
     <i class="fa-solid fa-rocket"> </i> Ombu Hub
   </div>
+  <div>
+       <% if user_signed_in? %>
+
+       <ul class= "list-group list-group-horizontal">
+          <li class="nav-item p-1"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete%></li>
+          <li class="nav-item p-1"><% if current_user.is_admin? %>
+          <%= link_to "Agregar Nuevo Curso", new_course_path %></li>
+          <% end %>
+        <% else %>
+          <li class="nav-item"><%= link_to "Iniciar Sesion", new_user_session_path, class: "nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+  </div>
+
 </div>

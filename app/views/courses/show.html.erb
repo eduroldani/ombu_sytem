@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
   <p><%=@course.long_description%></p>
   <p>Fecha Proximo curso:<%=@course.date%></p>
   <p>Capacidad:<%=@course.capacity%></p>
@@ -14,11 +14,9 @@
   <p>Edad Maxima::<%=@course.max_age%></p>
   <p>Precio:<%=@course.price%></p>
 
-
-
-
-  <%= link_to "Volver a Cursos", courses_path,class: 'btn btn-flat' %>
-
+  <ul>
+    <%= link_to "Volver a Cursos", courses_path,class: 'btn btn-flat' %>
+  </ul>
 
 <% if user_signed_in?  %>
   <% if current_user.is_admin? %>

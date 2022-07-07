@@ -1,34 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "logo.png" %>
+     <h4> <%= image_tag "logo.png" %> Ombu Hub</h4>
     <% end %>
 
     <div>
       <ul class="list-group list-group-horizontal">
-        <% if user_signed_in? %>
             <li class="nav-item p-1"><%= link_to "Inicio", "/"%></li>
             <li class="nav-item p-1">
             <%= link_to "¿Donde Estamos?", "https://g.page/ombu-hub?share", target: "_blank" %>
           </li>
-            <li class="nav-item p-1"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete%></li>
-            <li class="nav-item p-1"><% if current_user.is_admin? %>
-               <%= link_to "Agregar Nuevo Curso", new_course_path %></li>
+          <li class="nav-item p-1"><a href="http://wa.link/w3sgmm" target="_blank"><i class="fa-brands fa-whatsapp" ></i> WhatsApp</a></li>
 
-          <% end %>
-        <% else %>
-
-        <ul class= "list-group list-group-horizontal" >
-          <li class="nav-item">
-            <%= link_to "¿Donde Estamos?", "https://g.page/ombu-hub?share", class: "nav-link", target: "_blank" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Iniciar Sesion", new_user_session_path, class: "nav-link" %>
-          </li>
 
         </ul>
-        <% end %>
-      </ul>
     </div>
   </div>
 </div>
