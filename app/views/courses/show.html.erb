@@ -1,11 +1,37 @@
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%=@course.name%></h2>
-      <p><%=@course.short_description%></p>
-    </div>
-    <h2 class="card-trip-pricing"><%=@course.price%></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @course.photo.key, height: 300, crop: :fill %>')">
+  <div class="container">
+    <h1><%=@course.name%></h1>
+    <p><%=@course.short_description%></p>
+    <a class="btn btn-flat" href="http://wa.link/w3sgmm" target="_blank">Comunicarme</a>
   </div>
+</div>
+
+<div class="container">
+  <p><%=@course.long_description%></p>
+  <p>Fecha Proximo curso:<%=@course.date%></p>
+  <p>Capacidad:<%=@course.capacity%></p>
+  <p>Edad Minima:<%=@course.minimun_age%></p>
+  <p>Edad Maxima::<%=@course.max_age%></p>
+  <p>Precio:<%=@course.price%></p>
+
+
+
+
+  <%= link_to "Volver a Cursos", courses_path,class: 'btn btn-flat' %>
+
+
+<% if user_signed_in?  %>
+  <% if current_user.is_admin? %>
+  <ul>
+    <%= link_to "Editar Curso", edit_course_path, class: 'btn btn-flat' %>
+    <%= link_to "Eliminar Curso",
+      course_path(@course),
+      data: {method: :delete, confirm: "Estas Seguro?"},class: 'btn btn-flat'
+    %>
+  </ul>
+  <% else %>
+<% end %>
+<% end %>
+
+
 </div>

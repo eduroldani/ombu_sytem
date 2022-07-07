@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find(params[:id])
     @course.update(course_params)
+    redirect_to course_path(@course)
   end
 
   def create
@@ -33,13 +34,13 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     @course.destroy
     # No need for app/views/restaurants/destroy.html.erb
-    redirect_to courses_path, status: :see_other
+    redirect_to courses_path
   end
 
   private
 
   def course_params
-    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age)
+    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo )
   end
 
 end
