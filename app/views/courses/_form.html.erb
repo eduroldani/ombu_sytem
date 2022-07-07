@@ -1,0 +1,10 @@
+<%= simple_form_for @course do |f| %>
+  <%= f.input :name, label: 'Nombre del Curso'%>
+  <%= f.input :short_description, placeholder: 'descipcion corta' %>
+  <%= f.input :long_description, placeholder: 'descipcion larga' %>
+  <%= f.input :date %>
+  <%= f.input :price %>
+  <%= f.input :minimun_age %>
+  <%= f.input :max_age %>
+  <%= f.button :submit %>
+<% end %>
