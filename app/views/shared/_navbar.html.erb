@@ -1,22 +1,28 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-     <h4> <%= image_tag "logo.png" %> OMBU HUB</h4>
-    <% end %>
-
-    <div>
-      <ul class="list-group list-group-horizontal">
-            <li class="nav-item p-1"><%= link_to "Inicio |", "/"%></li>
-            <li class="nav-item p-1">
-            <%= link_to "¿Donde Estamos? |", "https://g.page/ombu-hub?share", target: "_blank" %>
-             </li>
-            <li class="nav-item p-1">
-            <%= link_to "Calendario |", "https://calendar.google.com/calendar/embed?src=1nv58p01md6p91adm2l65p4g8s%40group.calendar.google.com&ctz=Europe%2FBerlin", target: "_blank" %>
-             </li>
-          <li class="nav-item p-1"><a href="http://wa.link/w3sgmm" target="_blank"><i class="fa-brands fa-whatsapp" ></i> WhatsApp</a></li>
 
 
-        </ul>
-    </div>
-  </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="topnav" id="myTopnav">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <h4> <%= image_tag("logo.png", size: "24") %> Ombu Hub</h4>
+  <% end %>
+  <a href="/" class="active">Inicio</a>
+  <%= link_to "¿Donde Estamos?", "https://g.page/ombu-hub?share", target: "_blank" %>
+  <%= link_to "Calendario", "https://calendar.google.com/calendar/embed?src=1nv58p01md6p91adm2l65p4g8s%40group.calendar.google.com&ctz=Europe%2FBerlin", target: "_blank" %>
+  <a href="http://wa.link/w3sgmm" target="_blank"><i class="fa-brands fa-whatsapp" ></i> WhatsApp</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+      <script>
+       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+          function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topnav";
+            }
+          }
+    </script>
+
 </div>
