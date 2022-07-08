@@ -1,7 +1,11 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.all
+    if params[:query].present?
+      @courses = Course.search_by_name_short_description(params[:query])
+    else
+      @courses = Course.all
+    end
   end
 
   def show
@@ -25,9 +29,12 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.save
-    # No need for app/views/restaurants/create.html.erb
-    redirect_to course_path(@course)
+    if @course.save
+      redirect_to course_path(@course)
+    else
+      redirect_to new_course_path
+    end
+
   end
 
   def destroy
@@ -40,7 +47,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo, :what, :how, :project )
+    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo, :what, :how, :project, :capacity)
   end
 
 end
