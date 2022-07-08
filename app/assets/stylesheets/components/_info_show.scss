@@ -1,0 +1,22 @@
+.info-container{
+  display: flex;
+  justify-content: space-between
+
+}
+
+.img-show img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  // border-radius: 5px;
+  // margin: 8px;
+  border-color: white;
+  border-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+img-show h2 {
+  color: black;
+  font-size: 24px;
+}

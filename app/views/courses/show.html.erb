@@ -7,12 +7,57 @@
 </div>
 
 <div class="container mt-5">
-  <p><%=@course.long_description%></p>
-  <p>Fecha Proximo curso:<%=@course.date%></p>
-  <p>Capacidad:<%=@course.capacity%></p>
-  <p>Edad Minima:<%=@course.minimun_age%></p>
-  <p>Edad Maxima::<%=@course.max_age%></p>
-  <p>Precio:<%=@course.price%></p>
+  <div class = "info-container m-5">
+    <div class="img-show p-2">
+      <%= image_tag "profe.JPG" %>
+    </div>
+    <div class="info-show p-2">
+      <h2>Descripcion Larga</h2>
+      <p><%=@course.long_description%></p>
+      <strong><p>Proximo Curso: <%=@course.date%></p></strong>
+    </div>
+  </div>
+
+<div class="container mt-5">
+  <div class = "info-container m-5">
+    <div class="info-show p-2">
+      <h2>Que Voy a Aprender?</h2>
+      <p><%=@course.what%></p>
+    </div>
+    <div class="img-show p-2">
+      <%= image_tag "alumnos.jpg" %>
+    </div>
+  </div>
+
+
+<div class="container mt-5">
+  <div class = "info-container m-5">
+    <div class="img-show p-2">
+      <%= image_tag "haciendo.jpg" %>
+    </div>
+    <div class="info-show p-2">
+      <h2>Projecto Final</h2>
+      <p><%=@course.project%></p>
+    </div>
+  </div>
+
+<div class="container mt-5">
+  <div class = "info-container m-5">
+    <div class="info-show p-2">
+      <h2>Mas Informacion: </h2>
+      <p>Capacidad de alumnos: <%=@course.capacity%></p>
+      <p>Edad Minima: <%=@course.minimun_age%> años.</p>
+      <p>Edad Maxima: <%=@course.max_age%> años.</p>
+      <p>Proximo Curso: <%=@course.date%></p>
+    </div>
+    <div class="img-show p-2">
+      <%= image_tag "mas_info.jpg" %>
+    </div>
+  </div>
+
+
+
+
 
   <ul>
     <%= link_to "Volver a Cursos", courses_path,class: 'btn btn-flat' %>

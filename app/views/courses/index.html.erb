@@ -9,7 +9,7 @@
         <h2>Nombre del curso: <%=course.name%></h2>
         <p>Descripcion Corta del curso: <%=course.short_description%></p>
         <p>Proxima Fecha del curso: <%=course.date%></p>
-        <%= link_to "Ver Mas", course_path(course) %>
+        <%= link_to "Ver Mas", course_path(course),class: "btn btn-flat mt-3" %>
       </div>
 
     </div>
