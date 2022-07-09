@@ -7,7 +7,6 @@
 }
 
 .img-show img {
-  margin-top: 50px;
   height: 300px;
   width: 300px;
   object-fit: cover;
@@ -20,9 +19,10 @@
 }
 
 .info-show {
-  margin-top: 50px;
   height: 200px;
   width: 60%;
+  overflow: hidden;
+
 }
 
 img-show h2 {

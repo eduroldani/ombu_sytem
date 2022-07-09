@@ -12,14 +12,19 @@
        <% if user_signed_in? %>
 
        <ul class= "list-group list-group-horizontal">
-          <li class="nav-item p-1"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete%></li>
-          <li class="nav-item p-1"><% if current_user.is_admin? %>
-          <%= link_to "Agregar Nuevo Curso", new_course_path %></li>
+
+          <%= link_to "", destroy_user_session_path, method: :delete, class: "nav-link fa-solid fa-arrow-right-to-bracket" %>
+
+          <% if current_user.is_admin? %>
+
+          <%= link_to "", new_course_path, class: "nav-link fa-solid fa-plus" %></li>
+
           <% end %>
+
         <% else %>
-        <ul class= "list-group list-group-horizontal">
-          <li class="nav-item"><%= link_to "Iniciar Sesion", new_user_session_path, class: "nav-link" %>
-        </li>
+
+          <%= link_to "", new_user_session_path, class: "nav-link fa-solid fa-arrow-right-to-bracket" %>
+
         <% end %>
       </ul>
   </div>
