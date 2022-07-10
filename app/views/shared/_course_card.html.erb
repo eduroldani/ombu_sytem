@@ -5,7 +5,7 @@
       <div>
         <h2><%=course.name%></h2>
         <p><%=course.short_description%></p>
-        <p>Proxima Fecha: <%=course.date%></p>
+        <p>Proxima Fecha: <%=course.date.strftime('%d-%m-%Y')%></p>
         <%= link_to "Ver Mas", course_path(course),class: "btn btn-flat mt-3" %>
       </div>
     </div>
