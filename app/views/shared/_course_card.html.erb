@@ -1,6 +1,4 @@
-<div class="container">
-<h2>Mira nuestros cursos disponibles en Ombu hub:</h2>
-  <% @courses.each do |course| %>
+<% @courses.each do |course| %>
     <div class="card-trip mt-5">
       <%= cl_image_tag course.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
@@ -13,5 +11,3 @@
     </div>
     </div>
   <% end %>
-
-</div>
