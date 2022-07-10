@@ -22,8 +22,4 @@ class Course < ApplicationRecord
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
 
-
-
-
-
 end

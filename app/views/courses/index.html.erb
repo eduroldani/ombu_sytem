@@ -1,6 +1,5 @@
 <div class="container">
-<h2>En Ombu Hub hay mas de <%= Course.count %> cursos!</h2>
-<h3>Mira nuestros cursos disponibles:</h3>
+<h2>Mira nuestros cursos disponibles en Ombu hub:</h2>
   <% @courses.each do |course| %>
     <div class="card-trip mt-5">
       <%= cl_image_tag course.photo.key, height: 300, width: 400, crop: :fill %>
