@@ -1,13 +1,13 @@
 <div class="container">
-<h2>Mira nuestros cursos disponibles en Ombu hub:</h2>
+<h2>Mira nuestros cursos de Ombu Hub:</h2>
   <% @courses.each do |course| %>
-    <div class="card-trip mt-5">
+    <div class="card-trip mt-3 mb-3">
       <%= cl_image_tag course.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
       <div>
         <h2><%=course.name%></h2>
         <p><%=course.short_description%></p>
-        <p>Proxima Fecha: <%=course.date%></p>
+        <strong><p>Proxima Fecha: <%=course.date%></p></strong>
         <%= link_to "Ver Mas", course_path(course),class: "btn btn-flat mt-3" %>
       </div>
     </div>
