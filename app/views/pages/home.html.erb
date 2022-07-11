@@ -7,16 +7,23 @@
 </div>
 
 <div class= "container mt-5">
+  <div class= "home-text p-2">
+  <h1>Ombu nace como una propuesta para contribuir con la educación digital desde <strong>Tucuman</strong></h1>
+  <h2>Creemos que la mejor manera de aprender es haciendo, trabajando en equipo y divirtiéndose.
+  <h3>Forma parte la revolución de ombu Hub.</h2></h3>
+  <br>
   <%= simple_form_for :search, url: courses_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <input class="form-control string required" type="text" name="params[:query]" id="search_query" />
       <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Buscar Cursos
+        <i class="fas fa-search"></i>Buscar
       </button>
     </div>
   <% end %>
-</div>
+    <br>
 
+</div>
+</div>
 
 <div>
   <div class="container">
