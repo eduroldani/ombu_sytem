@@ -17,7 +17,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
 }
 
@@ -34,22 +34,22 @@
   background-position: top center;
 }
 
-.home-text h1 {
+// .home-text h1 {
+//   text-align: center;
+//   font-size: 24px;
+//   font-weight: 700;
+// }
+
+.home-text h2 {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
 }
 
-.home-text h2 {
+
+.home-text p {
   text-align: center;
   font-size: 18px;
-  font-weight: 700;
-}
-
-
-.home-text h3 {
-  text-align: center;
-  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
 }

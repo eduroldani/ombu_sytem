@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @courses = Course.search_by_name_short_description(params[:query])
     else
-      @courses = Course.all
+      @courses = Course.all.order("created_at DESC")
     end
   end
 
