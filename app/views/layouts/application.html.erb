@@ -18,6 +18,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
   </head>
 
@@ -30,6 +31,8 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
+    <a href="https://api.whatsapp.com/send?phone=+5493815752672&text=Hola Ombu Hub%21%20." class="floating" target="_blank"><i class="fa fa-whatsapp float-button"></i>
+  </a>
     <%= render "shared/footer" %>
   </body>
 </html>
