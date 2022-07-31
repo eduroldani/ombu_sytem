@@ -1,80 +1,244 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @course.photo.key, height: 2000, crop: :fill %>')">
-  <div class="container">
-    <h1><%=@course.name%></h1>
-    <p><%=@course.short_description%></p>
-    <a class="btn btn-flat" href="http://wa.link/w3sgmm" target="_blank">WhatsApp</a>
+<section class="hero" id="section_1">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-5 col-12 m-auto">
+                <div class="hero-text p-2">
+
+                    <h1 class="text-white mb-4"><u class="text-info"><%=@course.name%></u> </h1>
+
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span class="date-text"><%=@course.date.strftime('%d-%m-%Y')%></span>
+
+                        <span class="location-text">Tucuman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="about section-padding" id="section_2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-10 col-12">
+                <h2 class="mb-4">Sobre <u class="text-info">el Curso</u></h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <h3 class="mb-3">La importancia de la educacion</h3>
+
+                <p><%=@course.what%></p>
+
+                <%= link_to "Ver otros cursos", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+                <a rel="stylesheet" href="https://api.whatsapp.com/send?phone=+5493815752672&text=Hola Ombu Hub%21%20.", class = "custom-btn btn custom-link mt-3">Contacto</a>
+
+
+            </div>
+
+            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                <h4> <%=@course.long_description%> </h4>
+
+                <div class="avatar-group border-top py-5 mt-5">
+                    <p class="d-inline">Mas de 100 jovenes pasaron por Ombu hub</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="speakers section-padding" id="section_3">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+                <div class="speakers-text-info">
+                    <h2 class="mb-4">Mas <u class="text-info">Informacion</u></h2>
+
+                    <p>Proyecto Final: <%=@course.project %></p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="speakers-thumb">
+                    <img src="images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg" class="img-fluid speakers-image" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-12">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="speakers-thumb speakers-thumb-small">
+                            <img src="images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg" class="img-fluid speakers-image mt-5" alt="">
+
+                            <div class="speakers-info">
+                                <h5 class="speakers-title mb-0"><%=@course.capacity%> Personas</h5>
+
+                                <p class="speakers-text mb-0">Capacidad</p>
+
+                                <ul class="social-icon">
+                                    <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="speakers-thumb speakers-thumb-small">
+                            <img src="images/avatar/senior-man-white-sweater-eyeglasses.jpg" class="img-fluid speakers-image mt-5" alt="">
+
+                            <div class="speakers-info">
+                                <h5 class="speakers-title mb-0"><%=@course.minimun_age%> años</h5>
+
+                                <p class="speakers-text mb-0">Edad Minima</p>
+
+                                <ul class="social-icon">
+                                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="speakers-thumb speakers-thumb-small">
+                            <img src="images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg" class="img-fluid speakers-image mt-5" alt="">
+
+                            <div class="speakers-info">
+                                <h5 class="speakers-title mb-0"> <%=@course.max_age%> años</h5>
+
+                                <p class="speakers-text mb-0">Edad Maxima</p>
+
+                                <ul class="social-icon">
+                                    <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="speakers-thumb speakers-thumb-small">
+                            <img src="images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg" class="img-fluid speakers-image mt-5" alt="">
+
+                            <div class="speakers-info">
+                                <h5 class="speakers-title mb-0">Dia: <%=@course.date.strftime('%d-%m-%Y')%></h5>
+
+                                <p class="speakers-text mb-0">Fecha</p>
+
+                                <ul class="social-icon">
+                                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about section-padding" id="section_2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-10 col-12">
+                <h2 class="mb-4">Nuestra <u class="text-info">Historia</u></h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <h3 class="mb-3">La importancia de la educacion</h3>
+
+                <p>La creatividad debe ser tan importante en la educación como la alfabetización. En las escuelas se desprecia la creatividad y solo se premia la habilidad en matemáticas, lengua o historia, cuando deberían estar al mismo nivel. - Ken Robinson -  </p>
+
+                <%= link_to "Cursos", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+                <a rel="stylesheet" href="https://api.whatsapp.com/send?phone=+5493815752672&text=Hola Ombu Hub%21%20.", class = "custom-btn btn custom-link mt-3">Contacto</a>
+
+
+            </div>
+
+            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                <h4> La tecnología desarrolla el crecimiento personal, desarrollo de habilidades y oportunidades para conseguir un buen trabajo. </h4>
+
+                <div class="avatar-group border-top py-5 mt-5">
+                    <p class="d-inline">Mas de 100 jovenes pasaron por Ombu hub</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="venue section-padding" id="section_6">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-12">
+                <h2 class="mb-5">Aqui <u class="text-info">estamos!</u></h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14242.63103987709!2d-65.2630551!3d-26.8190239!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x56d486d32847edaf!2sOmbu%20Hub!5e0!3m2!1ses!2sde!4v1659224741705!5m2!1ses!2sde" width="100%" height="371.59" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                <div class="venue-thumb bg-white shadow-lg">
+
+                    <div class="venue-info-title">
+                        <h2 class="text-white mb-0">Ombu Hub - Tucuman</h2>
+                    </div>
+
+                    <div class="venue-info-body">
+                        <h4 class="d-flex " >
+                            Mate de Luna 4664, San Miguel de Tucuman, Argentina
+                        </h4>
+
+                        <h5 class="mt-4 mb-3">
+                            <a href="mailto:ombuhub@gmail.com" class="">
+                                ombuhub@gmail.com
+                            </a>
+                        </h5>
+
+                        <h5 class="mb-0 ">
+                            <a href="https://api.whatsapp.com/send?phone=+5493815752672&text=Hola Ombu Hub%21%20." class="">
+                                WhatsApp
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="container">
+  <div class="col-lg-6 col-12">
+      <%= link_to "Volver", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+      <% if user_signed_in?  %>
+      <% if current_user.is_admin? %>
+        <ul>
+          <%= link_to "Editar Curso", edit_course_path, class: 'custom-btn btn custom-link mt-3' %>
+          <%= link_to "Eliminar Curso",
+            course_path(@course),
+            data: {method: :delete, confirm: "Estas Seguro?"},class: 'custom-btn btn custom-link mt-3'
+          %>
+        </ul>
+        <% else %>
+      <% end %>
+    <% end %>
   </div>
-</div>
-
-<div class="container mt-5">
-  <div class = "info-container m-5">
-    <div class="img-show p-2">
-      <%= image_tag "profe.JPG" %>
-    </div>
-    <div class="info-show p-2">
-      <h2>Sobre el curso:</h2>
-      <p><%=@course.long_description%></p>
-      <strong><p>Proximo Curso: <%=@course.date.strftime('%d-%m-%Y')%></p></strong>
-    </div>
-  </div>
-
-<div class="container mt-5">
-  <div class = "info-container m-5">
-    <div class="info-show p-2">
-      <h2>¿Que Voy a aprender?</h2>
-      <p><%=@course.what%></p>
-    </div>
-    <div class="img-show p-2">
-      <%= image_tag "alumnos.jpg" %>
-    </div>
-  </div>
-
-
-<div class="container mt-5">
-  <div class = "info-container m-5">
-    <div class="img-show p-2">
-      <%= image_tag "haciendo.jpg" %>
-    </div>
-    <div class="info-show p-2">
-      <h2>Proyecto Final:</h2>
-      <p><%=@course.project%></p>
-    </div>
-  </div>
-
-<div class="container mt-5">
-  <div class = "info-container m-5">
-    <div class="info-show p-2">
-      <h2>Mas Informacion: </h2>
-      <p>Capacidad de alumnos: Max <%=@course.capacity%> personas para garantizar una experiencia unica.</p>
-      <p>Edad Minima: <%=@course.minimun_age%> años.</p>
-      <p>Edad Maxima: <%=@course.max_age%> años.</p>
-      <strong><p>Proximo Fecha: <%=@course.date.strftime('%d-%m-%Y')%></p></strong>
-    </div>
-    <div class="img-show p-2">
-      <%= image_tag "mas_info.jpg" %>
-    </div>
-  </div>
-
-
-
-
-
-  <ul>
-    <%= link_to "Volver a Cursos", courses_path,class: 'btn btn-flat' %>
-  </ul>
-
-<% if user_signed_in?  %>
-  <% if current_user.is_admin? %>
-  <ul>
-    <%= link_to "Editar Curso", edit_course_path, class: 'btn btn-flat' %>
-    <%= link_to "Eliminar Curso",
-      course_path(@course),
-      data: {method: :delete, confirm: "Estas Seguro?"},class: 'btn btn-flat'
-    %>
-  </ul>
-  <% else %>
-<% end %>
-<% end %>
-
-
 </div>
