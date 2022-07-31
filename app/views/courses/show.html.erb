@@ -1,4 +1,5 @@
-<section class="hero" id="section_1">
+<section class="hero hero-customized" id="section_1"
+style="background-image: url("image_tag(@course.photo.id)") repeat scroll 0% 0%;">
     <div class="container">
         <div class="row">
 
@@ -28,7 +29,7 @@
             </div>
 
             <div class="col-lg-6 col-12">
-                <h3 class="mb-3">La importancia de la educacion</h3>
+                <h3 class="mb-3">¿Que vas a aprender?</h3>
 
                 <p><%=@course.what%></p>
 
@@ -150,39 +151,8 @@
     </div>
 </section>
 
-<section class="about section-padding" id="section_2">
-    <div class="container">
-        <div class="row">
 
-            <div class="col-lg-10 col-12">
-                <h2 class="mb-4">Nuestra <u class="text-info">Historia</u></h2>
-            </div>
-
-            <div class="col-lg-6 col-12">
-                <h3 class="mb-3">La importancia de la educacion</h3>
-
-                <p>La creatividad debe ser tan importante en la educación como la alfabetización. En las escuelas se desprecia la creatividad y solo se premia la habilidad en matemáticas, lengua o historia, cuando deberían estar al mismo nivel. - Ken Robinson -  </p>
-
-                <%= link_to "Cursos", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
-                <a rel="stylesheet" href="https://api.whatsapp.com/send?phone=+5493815752672&text=Hola Ombu Hub%21%20.", class = "custom-btn btn custom-link mt-3">Contacto</a>
-
-
-            </div>
-
-            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                <h4> La tecnología desarrolla el crecimiento personal, desarrollo de habilidades y oportunidades para conseguir un buen trabajo. </h4>
-
-                <div class="avatar-group border-top py-5 mt-5">
-                    <p class="d-inline">Mas de 100 jovenes pasaron por Ombu hub</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="venue section-padding" id="section_6">
+<section class="venue-white section-padding" id="section_6">
     <div class="container">
         <div class="row">
 

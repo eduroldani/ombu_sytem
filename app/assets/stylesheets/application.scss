@@ -501,6 +501,17 @@ strong {
   margin-bottom: -5px;
 }
 
+.hero-customized::after {
+  content: "";
+  // background: rgba(0, 0, 0, 0) linear-gradient(rgba(39, 48, 83, 0.1) 0%, rgb(48, 51, 62) 100%) repeat scroll 0% 0%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-bottom: -5px;
+}
+
 .hero-text {
   position: absolute;
   z-index: 2;
@@ -771,6 +782,12 @@ strong {
 .venue {
   background: var(--section-bg-color);
 }
+
+.venue-white {
+  background: var(--white-color);
+}
+
+
 
 .venue-thumb {
   border-radius: 20px;
