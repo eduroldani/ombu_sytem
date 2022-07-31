@@ -1,31 +1,278 @@
+<!--
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner_two.JPG' %>);">
-  <div class="container">
-    <h2>¡Ayudando a pequeñas personas, lograr cosas gigantes!</h2>
-    <p>Acelera tu conocimiento con Ombu Hub</p>
-    <a class="btn btn-flat" href="/courses">Ver Cursos</a>
-  </div>
+<div class="container">
+<h2>¡Ayudando a pequeñas personas, lograr cosas gigantes!</h2>
+<p>Acelera tu conocimiento con Ombu Hub</p>
+<a class="btn btn-flat" href="/courses">Ver Cursos</a>
+</div>
 </div>
 
 <div class= "container mt-5">
-  <div class= "home-text p-2">
-  <h2>Ombu Hub nace como una propuesta para contribuir con la educación digital desde <strong>Tucuman</strong></h2>
-  <p>Forma parte la revolución de ombu Hub.</p>
-  <br>
-  <%= simple_form_for :search, url: courses_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="params[:query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i>Buscar
-      </button>
-    </div>
-  <% end %>
-    <br>
+<div class= "home-text p-2">
+<h2>Ombu Hub nace como una propuesta para contribuir con la educación digital desde <strong>Tucuman</strong></h2>
+<p>Forma parte la revolución de ombu Hub.</p>
+<br>
+<%= simple_form_for :search, url: courses_path, method: :get do |f| %>
+<div class="search-form-control form-group">
+<input class="form-control string required" type="text" name="params[:query]" id="search_query" />
+<button name="button" type="submit" class="btn btn-flat">
+  <i class="fas fa-search"></i>Buscar
+</button>
+</div>
+<% end %>
+<br>
 
 </div>
 </div>
 
 <div>
-  <div class="container">
-        <%= render "shared/course_card" %>
-  </div>
+<div class="container">
+  <%= render "shared/course_card" %>
 </div>
+</div>
+-->
+
+  <main>
+      <section class="hero" id="section_1">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-5 col-12 m-auto">
+                      <div class="hero-text">
+
+                          <h1 class="text-white mb-4"><u class="text-info">Ombu</u> Hub</h1>
+
+                          <div class="d-flex justify-content-center align-items-center">
+                              <span class="date-text">Academia Dgital para jovenes</span>
+
+                              <span class="location-text">Desde Tucuman</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </section>
+
+      <section class="about section-padding" id="section_2">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-10 col-12">
+                      <h2 class="mb-4">Nuestra <u class="text-info">Historia</u></h2>
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                      <h3 class="mb-3">La importancia de la educacion</h3>
+
+                      <p>Leadership Event is one-page Bootstrap v5.1.3 CSS layout for your website. Thank you for choosing TemplateMo website where you can instantly download free CSS templates at no cost.</p>
+
+                      <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="#section_3">Meet Speakers</a>
+
+                      <a class="custom-btn btn custom-link mt-3" href="#section_4">Check out Schedule</a>
+                  </div>
+
+                  <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</h4>
+
+                      <div class="avatar-group border-top py-5 mt-5">
+                          <p class="d-inline">Mas de 100 jovenes pasaron por nuestra academia</p>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+
+
+      <section class="speakers section-padding" id="section_3">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+                      <div class="speakers-text-info">
+                          <h2 class="mb-4">Nuestros <u class="text-info">Profesores</u></h2>
+
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                      <div class="speakers-thumb">
+                          <img src="images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg" class="img-fluid speakers-image" alt="">
+                      </div>
+                  </div>
+
+                  <div class="col-lg-12 col-12">
+                      <div class="row">
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="speakers-thumb speakers-thumb-small">
+                                  <img src="images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg" class="img-fluid speakers-image" alt="">
+
+                                  <div class="speakers-info">
+                                      <h5 class="speakers-title mb-0">Nicolas</h5>
+
+                                      <p class="speakers-text mb-0">Robotica</p>
+
+                                      <ul class="social-icon">
+                                          <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                                          <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="speakers-thumb speakers-thumb-small">
+                                  <img src="images/avatar/senior-man-white-sweater-eyeglasses.jpg" class="img-fluid speakers-image" alt="">
+
+                                  <div class="speakers-info">
+                                      <h5 class="speakers-title mb-0">Marcos</h5>
+
+                                      <p class="speakers-text mb-0">Robotica</p>
+
+                                      <ul class="social-icon">
+                                          <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                                          <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="speakers-thumb speakers-thumb-small">
+                                  <img src="images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg" class="img-fluid speakers-image" alt="">
+
+                                  <div class="speakers-info">
+                                      <h5 class="speakers-title mb-0">Julian</h5>
+
+                                      <p class="speakers-text mb-0">Robotica</p>
+
+                                      <ul class="social-icon">
+                                          <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                                          <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                                          <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="speakers-thumb speakers-thumb-small">
+                                  <img src="images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg" class="img-fluid speakers-image" alt="">
+
+                                  <div class="speakers-info">
+                                      <h5 class="speakers-title mb-0">Eduardo</h5>
+
+                                      <p class="speakers-text mb-0">programacion</p>
+
+                                      <ul class="social-icon">
+                                          <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                                          <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+
+
+
+
+      <section class="about section-padding" id="section_2">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-10 col-12">
+                      <h2 class="mb-4">Our <u class="text-info">Story</u></h2>
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                      <h3 class="mb-3">The importance of Leadership Conference in 2022</h3>
+
+                      <p>Leadership Event is one-page Bootstrap v5.1.3 CSS layout for your website. Thank you for choosing TemplateMo website where you can instantly download free CSS templates at no cost.</p>
+
+                      <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="#section_3">Meet Speakers</a>
+
+                      <a class="custom-btn btn custom-link mt-3" href="#section_4">Check out Schedule</a>
+                  </div>
+
+                  <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</h4>
+
+                      <div class="avatar-group border-top py-5 mt-5">
+                          <img src="images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg" class="img-fluid avatar-image" alt="">
+
+                          <img src="images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg" class="img-fluid avatar-image avatar-image-left" alt="">
+
+                          <img src="images/avatar/senior-man-white-sweater-eyeglasses.jpg" class="img-fluid avatar-image avatar-image-left" alt="">
+
+                          <img src="images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg" class="img-fluid avatar-image avatar-image-left" alt="">
+
+                          <p class="d-inline">120+ People are attending with us</p>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+
+
+
+      <section class="venue section-padding" id="section_6">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-12 col-12">
+                      <h2 class="mb-5">Aqui <u class="text-info">estamos!</u></h2>
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14242.63103987709!2d-65.2630551!3d-26.8190239!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x56d486d32847edaf!2sOmbu%20Hub!5e0!3m2!1ses!2sde!4v1659224741705!5m2!1ses!2sde" width="100%" height="371.59" allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+
+                  <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                      <div class="venue-thumb bg-white shadow-lg">
+
+                          <div class="venue-info-title">
+                              <h2 class="text-white mb-0">Ombu Hub - Tucuman</h2>
+                          </div>
+
+                          <div class="venue-info-body">
+                              <h4 class="d-flex no_color" >
+                                  <i class="fa-solid fa-location-pin no_color" > </i>
+                                   Mate de Luna 4664, San Miguel de Tucuman, Argentina
+                              </h4>
+
+                              <h5 class="mt-4 mb-3">
+                                  <a href="mailto:ombuhub@gmail.com" class="no_color">
+                                      <i class="fa-solid fa-envelope no_color"> </i>
+                                      ombuhub@gmail.com
+                                  </a>
+                              </h5>
+
+                              <h5 class="mb-0 ">
+                                  <a href="tel: 305-240-9671" class="no_color">
+                                      <i class="fa-solid fa-phone "></i>
+                                      +54 9 3815 75-2672
+                                  </a>
+                              </h5>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+
+
+  </main>

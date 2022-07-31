@@ -1,28 +1,33 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+            <span class="brand-text">Ombu <br> Hub</span>
+        </a>
+
+        <a class="nav-link custom-btn btn d-lg-none" href="#">Contacto</a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                     <%= link_to "Home", "/", class: "nav-link click-scroll" %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to "Cursos", courses_path, class: "nav-link click-scroll" %>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link custom-btn btn d-none d-lg-block" href="#">Whatsapp</a>
+                </li>
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            </ul>
+        <div>
 
-<div class="topnav" id="myTopnav">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <h4> <%= image_tag("logo.png", size: "24") %> Ombu Hub</h4>
-  <% end %>
-  <a href="/" class="active">Inicio</a>
-  <%= link_to "Cursos", courses_path%>
-  <%= link_to "¿Donde Estamos?", "https://g.page/ombu-hub?share", target: "blank" %>
-  <%= link_to "Calendario", "https://calendar.google.com/calendar/embed?src=1nv58p01md6p91adm2l65p4g8s%40group.calendar.google.com&ctz=Europe%2FBerlin", target: "blank"%>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-      <script>
-       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-          function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-              x.className += " responsive";
-            } else {
-              x.className = "topnav";
-            }
-          }
-    </script>
-
-</div>
+    </div>
+</nav>
