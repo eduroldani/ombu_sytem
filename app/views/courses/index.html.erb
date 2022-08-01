@@ -28,7 +28,7 @@
                       <div class="venue-thumb bg-white shadow-lg m-3">
 
                           <div class="venue-info-title">
-                              <h2 class="text-white mb-0"><%=course.name%></h2>
+                              <h2 class="text-white mb-0"><%=course.name.capitalize%></h2>
                           </div>
 
                           <div class="venue-info-body">
@@ -37,7 +37,8 @@
                               </h4>
 
                               <h5 class="mt-4 mb-3">
-                                 <%=course.date.strftime('%d-%m-%Y')%>
+                                Dia: <%= course.date.strftime('%d-%m-%Y') %>
+                                <%= course.date > Date.today ? " Proximamente " : " Expirado " %>
                               </h5>
 
                               <h5 class="mb-0 ">

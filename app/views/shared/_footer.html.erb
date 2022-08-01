@@ -65,17 +65,17 @@
 
                           <ul class= "list-group list-group-horizontal no_color">
 
-                          <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "nfooter-menu-item no_color" %>
+                          <%= link_to " Salir |", destroy_user_session_path, method: :delete, class: "nfooter-menu-item no_color" %>
 
-                          <% if current_user.is_admin? %>
+                            <% if current_user.is_admin? %>
 
-                          <%= link_to "Nuevo Curso", new_course_path, class: "footer-menu-item no_color" %></li>
+                            <%= link_to "| Nuevo Curso ", new_course_path, class: "footer-menu-item no_color" %></li>
 
                           <% end %>
 
                           <% else %>
 
-                          <%= link_to "Registrarme", new_user_session_path, class: "footer-menu-item no_color" %>
+                          <%= link_to "Entrar", new_user_session_path, class: "footer-menu-item no_color" %>
 
                           <% end %>
                           </ul>

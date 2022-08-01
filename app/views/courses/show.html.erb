@@ -6,12 +6,12 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<
             <div class="col-lg-5 col-12 m-auto">
                 <div class="hero-text p-2">
 
-                    <h1 class="text-white mb-4"><u class="text-info"><%=@course.name.capitalize()%></u> </h1>
+                    <h2 class="text-white mb-4"><u class="text-info"><%=@course.name.capitalize%></u> </h2>
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <span class="date-text"><%=@course.date.strftime('%d-%m-%Y')%></span>
+                        <span class="date-text"><%= @course.date > Date.today ? " Proximamente " : " Expirado " %></span>
 
-                        <span class="location-text">Tucuman</span>
+                        <span class="location-text"><%= @course.date.strftime('%d-%m-%Y') %></span>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<
                             <div class="speakers-info">
                                 <h5 class="speakers-title mb-0">Dia: <%=@course.date.strftime('%d-%m-%Y')%></h5>
 
-                                <p class="speakers-text mb-0">Fecha</p>
+                                <p class="speakers-text mb-0"><%= @course.date > Date.today ? " Proximamente " : " Expirado " %></p>
 
                                 <ul class="social-icon">
                                     <li><a href="#" class="social-icon-link bi-instagram"></a></li>
