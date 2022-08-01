@@ -1,3 +1,4 @@
+<!--
 <div class="container">
 <h2>Mira nuestros cursos de Ombu Hub:</h2>
   <% @courses.each do |course| %>
@@ -15,3 +16,37 @@
   <% end %>
 
 </div>
+-->
+
+<section class="venue section-padding" id="section_6">
+
+          <div class="container">
+            <h2>Mira nuestros cursos de Ombu Hub:</h2>
+              <div class="row">
+                  <% @courses.each do |course| %>
+                  <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                      <div class="venue-thumb bg-white shadow-lg m-3">
+
+                          <div class="venue-info-title">
+                              <h2 class="text-white mb-0"><%=course.name%></h2>
+                          </div>
+
+                          <div class="venue-info-body">
+                              <h4 class="d-flex " >
+                                 <%=course.short_description%>
+                              </h4>
+
+                              <h5 class="mt-4 mb-3">
+                                 <%=course.date.strftime('%d-%m-%Y')%>
+                              </h5>
+
+                              <h5 class="mb-0 ">
+                                  <%= link_to "Ver Mas", course_path(course),class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+                              </h5>
+                          </div>
+                      </div>
+                  </div>
+                  <% end %>
+              </div>
+          </div>
+      </section>
