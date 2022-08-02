@@ -1,29 +1,71 @@
+
+
 <!--
 <div class="container">
-<h2>Mira nuestros cursos de Ombu Hub:</h2>
-  <% @courses.each do |course| %>
-    <div class="card-trip mt-3 mb-3">
-      <%= cl_image_tag course.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%=course.name%></h2>
-        <p><%=course.short_description%></p>
-        <strong><p>Proxima Fecha: <%=course.date.strftime('%d-%m-%Y')%></p></strong>
-        <%= link_to "Ver Mas", course_path(course),class: "btn btn-flat mt-3" %>
+  <h2>Mira nuestros cursos de Ombu Hub:</h2>
+    <% @courses.each do |course| %>
+      <div class="card-trip mt-3 mb-3">
+        <%= cl_image_tag course.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%=course.name%></h2>
+          <p><%=course.short_description%></p>
+          <strong><p>Proxima Fecha: <%=course.date.strftime('%d-%m-%Y')%></p></strong>
+          <%= link_to "Ver Mas", course_path(course),class: "btn btn-flat mt-3" %>
+        </div>
       </div>
-    </div>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 
-</div>
 -->
+
+<section class="venue section-padding" id="section_6">
+  <div class="container">
+    <h2>Mira nuestros cursos aqui: </h2>
+    <div>
+        <div class="row">
+           <% @courses.each do |course| %>
+
+          <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+              <div class="show-index bg-white shadow-lg m-3">
+                  <div class="venue-thumb bg-white shadow-lg m-3">
+                    <div class="venue-info-title">
+                        <h2 class="text-white mb-0"><%=course.name.upcase%></h2>
+                    </div>
+                    <div class="venue-info-body">
+                      <h4><%=course.short_description%></h4>
+                      <h5 class="mt-4 mb-3"><%= course.date.strftime('%d-%m-%Y') %></h5>
+                      <h5 class="mt-4 mb-3"><%= course.date > Date.today ? " Proximamente " : " Expirado " %></h5>
+                    <div>
+                      <%= link_to "Ver Mas", course_path(course),class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+                    </div>
+                    <div class ="img-info mt-4 mb-3">
+                      <%= cl_image_tag course.photo.key, height: 200, width: 600, crop: :fill  %>
+                    </div>
+
+                    </div>
+                  <div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+
+    <%end %>
+  </div>
+</section>
+
+<!--
 
 <section class="venue section-padding" id="section_6">
 
           <div class="container">
             <h2>Mira nuestros cursos de Ombu Hub:</h2>
               <div class="row">
+
                   <% @courses.each do |course| %>
+
                   <div class="col-lg-6 col-12 mt-5 mt-lg-0">
                       <div class="venue-thumb bg-white shadow-lg m-3">
 
@@ -35,19 +77,23 @@
                               <h4 class="d-flex " >
                                  <%=course.short_description%>
                               </h4>
-
                               <h5 class="mt-4 mb-3">
-                                Dia: <%= course.date.strftime('%d-%m-%Y') %>
+                                Dia: <%= course.date.strftime('%d-%m-%Y') %> -
                                 <%= course.date > Date.today ? " Proximamente " : " Expirado " %>
                               </h5>
-
                               <h5 class="mb-0 ">
                                   <%= link_to "Ver Mas", course_path(course),class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
                               </h5>
+                                <div class="product-image">
+                                    <%= cl_image_tag course.photo.key %>
+                                </div>
                           </div>
+
                       </div>
                   </div>
                   <% end %>
               </div>
           </div>
       </section>
+
+-->

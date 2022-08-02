@@ -656,61 +656,6 @@ strong {
 }
 
 
-/*---------------------------------------
-  SCHEDULE
------------------------------------------*/
-.nav-tabs {
-  border-bottom: 0;
-}
-
-.nav-tabs .nav-link,
-.nav-tabs .nav-link span {
-  display: block;
-  text-align: left;
-}
-
-.nav-tabs .nav-link span {
-  display: block;
-}
-
-.nav-tabs .nav-link small {
-  display: block;
-  font-size: 18px;
-  font-weight: normal;
-  color: var(--p-color);
-}
-
-.nav-tabs .nav-link {
-  background: var(--white-color);
-  border-radius: 0;
-  border: 0;
-  border-left: 3px solid var(--section-bg-color);
-  padding: 20px 30px;
-  transition: all 0.3s;
-  width: 25%;
-}
-
-.nav-tabs .nav-link:first-child {
-  border-left-color: transparent;
-}
-
-.nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {
-  border-left-color: var(--primary-color);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-}
-
-.nav-tabs .nav-link.active h3,
-.nav-tabs .nav-link:focus h3,
-.nav-tabs .nav-link:hover h3 {
-  color: var(--primary-color);
-}
-
-.schedule-image {
-  border-radius: 20px;
-}
 
 
 /*---------------------------------------
@@ -787,17 +732,71 @@ strong {
   background: var(--white-color);
 }
 
-
-
 .venue-thumb {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
+
+
 }
 
 .venue-info-title,
 .venue-info-body {
   padding: 40px;
+  min-height: 150px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.img-info {
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.venue-info-title {
+  background: var(--navbar-bg-color);
+  padding: 20px 40px;
+}
+
+.google-map {
+  border-radius: 20px;
+}
+
+
+/*---------------------------------------
+  INDEX CURSOS
+-----------------------------------------*/
+
+.venue {
+  background: var(--section-bg-color);
+}
+
+.venue-white {
+  background: var(--white-color);
+}
+
+.show-index {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+}
+
+.venue-info-title,
+.venue-info-body {
+  padding: 40px;
+  min-height: 150px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.img-info {
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .venue-info-title {
