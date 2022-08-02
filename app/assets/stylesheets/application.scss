@@ -17,11 +17,11 @@
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #0dcaf0;
-  --secondary-color:              #0d6efd;
+  --primary-color:                #046D97;
+  --secondary-color:              #7FF0B3;
   --section-bg-color:             #f0f8ff;
   --dark-color:                   #000000;
-  --navbar-bg-color:              #273053;
+  --navbar-bg-color:              #00406E;
   --p-color:                      #717275;
   --highlight-icon-color:         #ff0100;
 
@@ -301,10 +301,10 @@ strong {
 }
 
 .navbar-brand {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.2rem;
   font-weight: var(--font-weight-bold);
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-transform: uppercase;
 }
 
