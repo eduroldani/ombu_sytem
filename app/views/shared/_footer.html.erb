@@ -56,31 +56,28 @@
 
                     <div class="col-lg-7 col-12">
                         <ul class="footer-menu d-flex flex-wrap">
+
                           <li class="footer-menu-item"><a href="/" class="footer-menu-link no_color ">Home</a></li>
 
                           <li class="footer-menu-item"><a href="/" class="footer-menu-link no_color">Contacto</a></li>
 
-                          <div>
                           <% if user_signed_in? %>
 
-                          <ul class= "list-group list-group-horizontal no_color">
-
-                          <%= link_to " Salir |", destroy_user_session_path, method: :delete, class: "nfooter-menu-item no_color" %>
+                          <li class="footer-menu-item"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "footer-menu-link no_color" %></li>
 
                             <% if current_user.is_admin? %>
 
-                            <%= link_to "| Nuevo Curso ", new_course_path, class: "footer-menu-item no_color" %></li>
+                          <li class="footer-menu-item"><%= link_to "Agregar Curso ", new_course_path, class: "footer-menu-link no_color" %></li>
 
                           <% end %>
 
                           <% else %>
 
-                          <%= link_to "Entrar", new_user_session_path, class: "footer-menu-item no_color" %>
+                          <li class="footer-menu-item"><%= link_to "Entrar", new_user_session_path, class: "footer-menu-link no_color" %></li>
 
                           <% end %>
-                          </ul>
-                          </div>
                         </ul>
+
                     </div>
                 </div>
             </div>
