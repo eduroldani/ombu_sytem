@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
-
+  has_many :rooms, dependent: :destroy
+  has_many :students, through: :rooms
 
   has_one_attached :photo
   validates :name, presence: true

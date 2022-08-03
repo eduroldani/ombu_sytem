@@ -1,0 +1,31 @@
+<div class="container mt-5">
+
+  <h2>Estudiantes: </h2>
+  <%= link_to "Agregar", new_student_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+
+
+<div class="mt-3">
+
+</div>
+
+
+
+
+  <% @students.each do |student| %>
+      <div class="notification">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+        <div class="notification-content">
+          <p><small>Pago: <%= student.is_converted == true ? "✔️" : "❌" %></small></p>
+          <p><%= student.first_name %> <%= student.last_name %> - Telefono: <%=student.contact_phone%></p>
+        </div>
+
+        <div class="notification-actions">
+          <%= link_to "Ver Mas", student_path(student),class: "far fa-eye-alt" %>
+          <%= link_to "Editar", edit_student_path(student) ,class: "far fa-eye-alt" %>
+          <%= link_to "Eliminar",
+            student_path(student),
+            data: {method: :delete, confirm: "Estas Seguro?"},class: 'far fa-trash-alt'
+          %>
+        </div>
+      </div>
+    <% end %>

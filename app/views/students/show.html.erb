@@ -1,0 +1,27 @@
+<div class="container p-3">
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Alumno: <%=@student.first_name%>  <%=@student.last_name%></h2>
+        <p>Email: <%=@student.contact_email%></p>
+        <p>Telefono: <%=@student.contact_phone%></p>
+        <p>Fecha de Nacimiento: <%=@student.date_of_birth%></p>
+        <p>Colegio: <%=@student.school%></p>
+        <p>Confirmado: <%= @student.is_converted == true ? "✔️" : "❌" %></p>
+        <p>Medio: <%=@student.channel%></p>
+      </div>
+      <h2 class="card-trip-pricing">Estudiante</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+  <ul >
+
+    <%= link_to "Eliminar",
+            student_path(@student),
+            data: {method: :delete, confirm: "Estas Seguro?"},class: 'custom-btn custom-border-btn btn custom-link mt-3 me-3'
+          %>
+    <%= link_to "Editar", edit_student_path,class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+    <%= link_to "Volver", students_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+  </ul>
+</div>

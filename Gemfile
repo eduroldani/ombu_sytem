@@ -66,3 +66,5 @@ gem "cloudinary"
 
 gem "pg_search"
 
+gem "blazer"
+

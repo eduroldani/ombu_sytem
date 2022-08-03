@@ -1,0 +1,11 @@
+<%= simple_form_for @student do |f| %>
+  <%= f.input :first_name, label: 'Nombre Estudiante'%>
+  <%= f.input :last_name, label: 'Apellido Estudiante'%>
+  <%= f.input :contact_email, label: 'Email Contacto'%>
+  <%= f.input :contact_phone, label: 'Telefono de Contacto'%>
+  <%= f.input :date_of_birth, label: 'Fecha de Nacimiento'%>
+  <%= f.input :school, label: 'Colegio'%>
+  <%= f.input :is_converted, label: 'Pago?'%>
+  <%= f.input :channel, label: 'Por donde nos contacto'%>
+  <%= f.button :submit , label: 'Enviar' %>
+<% end %>

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  
+  authenticate :user, ->(user) { user.is_admin? } do
+    mount Blazer::Engine, at: "blazer"
+  end
+
   root to: "pages#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     # Read all
@@ -16,4 +19,6 @@ Rails.application.routes.draw do
     patch  "courses/:id", to: "courses#update"
     # Delete
     delete "courses/:id", to: "courses#destroy"
+
+  resources :students
 end
