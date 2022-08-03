@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_03_212359) do
+ActiveRecord::Schema.define(version: 2022_08_03_224144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,6 +137,10 @@ ActiveRecord::Schema.define(version: 2022_08_03_212359) do
     t.string "channel"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "full_name_contact"
+    t.boolean "allow_social"
+    t.datetime "last_contact"
+    t.boolean "is_cancelled"
   end
 
   create_table "users", force: :cascade do |t|

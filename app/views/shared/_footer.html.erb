@@ -1,38 +1,3 @@
-<!--
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="https://www.instagram.com/ombu_hub/"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/ombuhub"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/company/ombu-hub"><i class="fab fa-linkedin"></i></a>
-  </div>
-
-  <div class="footer-copyright">
-    <i class="fa-solid fa-rocket"> </i> Ombu Hub
-  </div>
-  <div>
-       <% if user_signed_in? %>
-
-       <ul class= "list-group list-group-horizontal">
-
-          <%= link_to "", destroy_user_session_path, method: :delete, class: "nav-link fa-solid fa-arrow-right-to-bracket" %>
-
-          <% if current_user.is_admin? %>
-
-          <%= link_to "", new_course_path, class: "nav-link fa-solid fa-plus" %></li>
-
-          <% end %>
-
-        <% else %>
-
-          <%= link_to "", new_user_session_path, class: "nav-link fa-solid fa-arrow-right-to-bracket" %>
-
-        <% end %>
-      </ul>
-  </div>
-
-</div>
--->
 
 <footer class="site-footer">
             <div class="container">

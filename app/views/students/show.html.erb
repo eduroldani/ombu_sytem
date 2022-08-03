@@ -1,18 +1,26 @@
+ <% if user_signed_in?  %>
+      <% if current_user.is_admin? %>
+
+
 <div class="container p-3">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= image_tag("fondo_profile.jpg") %>
     <div class="card-trip-infos">
       <div>
-        <h2>Alumno: <%=@student.first_name%>  <%=@student.last_name%></h2>
+        <h2><%=@student.first_name%>  <%=@student.last_name%> </h2>
         <p>Email: <%=@student.contact_email%></p>
         <p>Telefono: <%=@student.contact_phone%></p>
-        <p>Fecha de Nacimiento: <%=@student.date_of_birth%></p>
+        <p>Fecha de Nacimiento: <%=@student.date_of_birth.strftime('%d-%m-%Y')%></p>
         <p>Colegio: <%=@student.school%></p>
-        <p>Confirmado: <%= @student.is_converted == true ? "✔️" : "❌" %></p>
+        <p>Persona Responsable: <%=@student.full_name_contact%></p>
+        <p><%= @student.is_converted == true ? "🟩 Cliente " : "🟥 Prospecto" %></p>
         <p>Medio: <%=@student.channel%></p>
+        <p>Autorizado para redes: <%= @student.allow_social == true ? "📸" : "📵" %></p>
       </div>
-      <h2 class="card-trip-pricing">Estudiante</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+
+        <%= image_tag("robot.jpg", class: "card-trip-user avatar-bordered") %>
+        <h3>Ultimo contacto: <%= @student.last_contact == nil  ? "Registrar fecha" : @student.last_contact.strftime('%d-%m-%Y')  %></h3>
+        <h3>Cancelo: <%= @student.is_cancelled == true ? "SI 🟥" : "AUN NO" %></h3>
     </div>
   </div>
   <ul >
@@ -25,3 +33,9 @@
     <%= link_to "Volver", students_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
   </ul>
 </div>
+
+
+
+        <% else %>
+      <% end %>
+    <% end %>
