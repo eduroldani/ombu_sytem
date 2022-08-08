@@ -1,0 +1,10 @@
+<div class="container m-3">
+  <h1>Hola Nueva Room</h1>
+  <%= simple_form_for [@student, @room] do |f| %>
+  Agregar a: <%= @student.first_name %> <%= @student.last_name %>
+  <%= f.input :is_paid %>
+  <%= f.association :course %>
+  <%= f.button :submit %>
+  <% end %>
+
+</div>

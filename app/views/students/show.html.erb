@@ -2,6 +2,7 @@
       <% if current_user.is_admin? %>
 
 
+
 <div class="container p-3">
   <div class="card-trip">
       <%= image_tag("fondo_profile.jpg") %>
@@ -23,8 +24,8 @@
         <h3>Cancelo: <%= @student.is_cancelled == true ? "SI 🟥" : "AUN NO" %></h3>
     </div>
   </div>
-  <ul >
 
+  <ul class="">
     <%= link_to "Eliminar",
             student_path(@student),
             data: {method: :delete, confirm: "Estas Seguro?"},class: 'custom-btn custom-border-btn btn custom-link mt-3 me-3'
@@ -32,10 +33,44 @@
     <%= link_to "Editar", edit_student_path,class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
     <%= link_to "Volver", students_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
   </ul>
+
+
+
+  <div class="container border m-1 p-3 shadow">
+    <h3>Agregar a un curso: </h3>
+    <p> Agregar a: <%= @student.first_name %> <%= @student.last_name %></p>
+    <%= simple_form_for [@student, @room] do |f| %>
+     <%= f.association :course,label: "Curso: "%>
+
+    <%= f.input :is_paid, label: "Pago?" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <h3>Cursos de <%= @student.first_name %>: </h3>
+  <% @rooms.each do |room| %>
+      <div class="notification shadow">
+      <%= image_tag("robot.jpg", class: "avatar-large") %>
+        <div class="notification-content">
+          <h5><strong> Curso: <%= room.id %> <%= room.course.name %>
+          <p>Pago: <%= room.is_paid == true ? "SI 🟩" : "NO 🟥" %></p>
+        </div>
+
+        <div class="notification-actions">
+        </div>
+      </div>
+    <% end %>
+
+
+
+
+
+
+<% end %>
+
+
+
 </div>
-
-
 
         <% else %>
       <% end %>
-    <% end %>

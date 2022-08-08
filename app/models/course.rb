@@ -1,6 +1,6 @@
 class Course < ApplicationRecord
   has_many :rooms, dependent: :destroy
-  has_many :students, through: :rooms
+  has_many :students
 
   has_one_attached :photo
   validates :name, presence: true
@@ -11,7 +11,7 @@ class Course < ApplicationRecord
   validates :price, presence: false, numericality: true
   validates :minimun_age, presence: false,numericality: true
   validates :max_age, presence: false,numericality: true
-  validates :photo, presence: true
+  # validates :photo, presence: true
   validates :what, presence: true
   validates :how, presence: true
   validates :project, presence: true
@@ -22,5 +22,6 @@ class Course < ApplicationRecord
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
+
 
 end

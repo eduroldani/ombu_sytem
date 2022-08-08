@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer"
   end
 
+
+
   root to: "pages#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     # Read all
@@ -21,4 +23,9 @@ Rails.application.routes.draw do
     delete "courses/:id", to: "courses#destroy"
 
   resources :students
+
+  resources :students do
+    resources :rooms
+  end
+
 end

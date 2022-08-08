@@ -6,6 +6,8 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @room = Room.new
+    @rooms = Room.where(student_id: params[:id])
   end
 
   def new

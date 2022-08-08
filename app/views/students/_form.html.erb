@@ -4,12 +4,12 @@
   <%= f.input :full_name_contact, label: 'Nombre Completo de Persona responsable'%>
   <%= f.input :contact_email, label: 'Email Contacto'%>
   <%= f.input :contact_phone, label: 'Telefono de Contacto'%>
-  <%= f.input :date_of_birth, label: 'Fecha de Nacimiento'%>
+  <%= f.input :date_of_birth, label: 'Fecha de Nacimiento', start_year: 1993%>
   <%= f.input :school, label: 'Colegio'%>
   <%= f.input :is_converted, label: 'Pago?'%>
   <%= f.input :channel, label: 'Canal?'%>
   <%= f.input :allow_social, label: 'Autorizado para redes: '%>
   <%= f.input :last_contact, label: 'Ultimo contacto'%>
   <%= f.input :is_cancelled, label: 'No Llamar mas'%>
-  <%= f.button :submit , label: 'Enviar' %>
+  <%= f.button :submit , "Crear Estudiante", label: 'Enviar', class: "btn btn-primary" %>
 <% end %>

@@ -32,8 +32,9 @@ class CoursesController < ApplicationController
     if @course.save
       redirect_to course_path(@course)
     else
-      redirect_to new_course_path
+      render :new, status: :unprocessable_entity
     end
+
 
   end
 

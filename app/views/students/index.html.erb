@@ -19,8 +19,8 @@
       <%= image_tag("robot.jpg", class: "avatar-large") %>
 
         <div class="notification-content">
+          <h5><strong><%= student.first_name %> <%= student.last_name %></strong> - Cursos: <%= student.rooms.length %></h5>
           <p><small><%= student.is_converted == true ? "🟩 Cliente " : "🟥 Prospecto" %> - Ultimo contacto:  <%= student.last_contact == nil  ? "Registrar fecha" : student.last_contact.strftime('%d-%m-%Y')  %> - ¿Cancelo? <%= student.is_cancelled == true ? "SI" : "NO" %></small></p>
-          <h5><strong> Alumno: <%= student.first_name %> <%= student.last_name %></strong></h5>
           <p>Telefono: <%=student.contact_phone%></p>
           <p>Responsable: <%= student.full_name_contact %>
         </div>
