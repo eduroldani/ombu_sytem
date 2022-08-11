@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @courses = Course.search_by_name_short_description(params[:query])
     else
-      @courses = Course.all.order("created_at DESC")
+      @courses = Course.all.order("date DESC")
     end
   end
 
@@ -48,7 +48,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo, :what, :how, :project, :capacity)
+    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo, :what, :how, :project, :capacity,:category )
   end
 
 end

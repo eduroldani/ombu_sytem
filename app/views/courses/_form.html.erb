@@ -1,5 +1,6 @@
 <%= simple_form_for @course do |f| %>
   <%= f.input :name, label: 'Nombre del Curso'%>
+  <%= f.input :category,label: 'Categoria', collection: ["Robotica", "Diseño Y Impresion 3D"], required: true  %>
   <%= f.input :short_description, placeholder: 'descipcion corta max 100 caracteres',label: 'Descripcion Corta:' %>
   <%= f.input :long_description, placeholder: 'descipcion larga', label: 'Descripcion Larga:' %>
   <%= f.input :date, label: 'Fecha del curso:' %>
