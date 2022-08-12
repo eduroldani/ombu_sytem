@@ -1,11 +1,13 @@
 <div class="container">
-    <h2 class= "mt-3" >Cursos de Ombu Hub:</h2>
+    <h2 class= "mt-3" >Todos los cursos de Ombu Hub:</h2>
+    <%= link_to "Cursos Robotica", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+    <%= link_to "Cursos 3D", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
       <div class="row m-3">
       <% @courses.each do |course| %>
 
         <% if course.date > Date.today %>
             <div class="col-lg-3 col-12 m-4">
-                <div class="card" style="width: 18rem; height: 100%; ">
+                <div class="card shadow" style="width: 18rem; height: 100%; ">
 
                       <%= cl_image_tag course.photo.key, class: "card-img-top", height: 150 %>
                       <div class="card-body" style="height: 100%; display: flex;flex-direction: column;justify-content
