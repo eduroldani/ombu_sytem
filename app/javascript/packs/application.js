@@ -3,19 +3,20 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "channels/typed"
+
+
+console.log("index")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-var http = require("http");
-setInterval(function() {
-    http.get("http://www.ombuhub.online/");
-}, 300000); // every 5 minutes (300000)
 
 
 /*!

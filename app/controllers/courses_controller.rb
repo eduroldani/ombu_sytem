@@ -8,6 +8,14 @@ class CoursesController < ApplicationController
     end
   end
 
+  def robotica
+    @courses = Course.where(category: 'Robotica')
+  end
+
+  def tresd
+    @courses = Course.where(category: 'Diseño Y Impresion 3D')
+  end
+
   def show
     @course = Course.find(params[:id])
   end

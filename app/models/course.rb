@@ -11,7 +11,7 @@ class Course < ApplicationRecord
   validates :price, presence: false, numericality: true
   validates :minimun_age, presence: false,numericality: true
   validates :max_age, presence: false,numericality: true
-  # validates :photo, presence: true
+  validates :photo, presence: true
   validates :what, presence: true
   validates :how, presence: true
   validates :project, presence: true

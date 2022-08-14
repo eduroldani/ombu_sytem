@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,11 +37,12 @@
     <%= render "shared/navbar" %>
 
       <link rel="icon" href="<%= asset_path 'logo.png' %>">
-      
+
       <%= yield %>
     <a href="https://api.whatsapp.com/send?phone=+5493815752672&text=Hola Ombu Hub%21%20." class="floating" target="_blank"><i class="fa fa-whatsapp float-button"></i>
   </a>
     <%= render "shared/footer" %>
+
   <footer>
 
   </footer>
