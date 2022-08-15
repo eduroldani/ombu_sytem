@@ -2,12 +2,22 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all.order("created_at DESC")
+    
   end
 
   def show
     @student = Student.find(params[:id])
     @room = Room.new
     @rooms = Room.where(student_id: params[:id])
+
+
+    @paid_courses = 0
+    @student.rooms.each do |room|
+       if room.is_paid
+        @paid_courses = @paid_courses + 1
+       else
+       end
+    end
   end
 
   def new

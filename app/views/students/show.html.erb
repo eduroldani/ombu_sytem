@@ -14,7 +14,9 @@
         <p>Fecha de Nacimiento: <%=@student.date_of_birth.strftime('%d-%m-%Y')%></p>
         <p>Colegio: <%=@student.school%></p>
         <p>Persona Responsable: <%=@student.full_name_contact%></p>
-        <p><%= @student.is_converted == true ? "🟩 Cliente " : "🟥 Prospecto" %></p>
+        <%# <p><%= @student.is_converted == true ? "🟩 Cliente " : "🟥 Prospecto" %>
+        <p><%= @paid_courses >= 1 ? "🟩 Cliente " : "🟥 Prospecto" %></p>
+        <strong><p>Cursos Pagados: <%= @paid_courses %></p></strong>
         <p>Medio: <%=@student.channel%></p>
         <p>Autorizado para redes: <%= @student.allow_social == true ? "📸" : "📵" %></p>
       </div>
@@ -38,7 +40,8 @@
     <h3>Agregar a un curso: </h3>
     <p> Agregar a: <%= @student.first_name %> <%= @student.last_name %></p>
     <%= simple_form_for [@student, @room] do |f| %>
-     <%= f.association :course,label: "Curso: "%>
+     <%= f.association :course, collection: Course.order("created_at DESC"), label: false,
+                  label_method: lambda { |item| "Curso #{item.name} --- Dia: #{item.date.strftime("%-d.%-m.%y")}" }%>
 
     <%= f.input :is_paid, label: "Pago?" %>
     <%= f.button :submit, "Agregar a curso",class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
@@ -49,26 +52,38 @@
 <div class="mt-3">
   <h3>Cursos de <%= @student.first_name %>: </h3>
   <h4>Total de cursos: <%= @student.rooms.length %> </h4>
-  <% @rooms.each do |room| %>
-      <div class="notification shadow">
-      <%= image_tag("robot.jpg", class: "avatar-large") %>
-        <div class="notification-content">
-          <h5><strong> Curso: <%= room.id %> <%= room.course.name %>
-          <p>Pago: <%= room.is_paid == true ? "SI 🟩" : "NO 🟥" %></p>
-        </div>
 
-        <div class="notification-actions">
-        </div>
+
+
+<div class="container">
+  <% @rooms.each do |room| %>
+  <div class="notification">
+      <div class="notification-content d-flex">
+        <h5><strong> Curso: <%= room.course.name %>
+          <p>Pago: <%= room.is_paid == true ? "SI 🟩" : "NO 🟥" %></p>
       </div>
-    <% end %>
+
+      <div class="notification-actions">
+      <%= link_to "Quitar",
+            student_room_path(room.student_id),
+            data: {method: :delete, confirm: "Estas Seguro?"},class: ''
+        %>
+
+      </div>
+
+  </div>
+   <% end %>
 </div>
 
 
 
+
+
+
+
+
+
 <% end %>
-
-
-
 </div>
 
         <% else %>

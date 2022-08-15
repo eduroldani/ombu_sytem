@@ -11,18 +11,22 @@
 
 </div>
 
-
-
-
   <% @students.each do |student| %>
+    <% paid_courses = 0 %>
+        <% student.rooms.each do |room| %>
+        <% if room.is_paid %>
+        <% paid_courses = paid_courses + 1 %>
+        <% else %>
+        <% end %>
+      <% end %>
+
       <div class="notification">
       <%= image_tag("robot.jpg", class: "avatar-large") %>
-
         <div class="notification-content">
-          <h5><strong><%= student.first_name %> <%= student.last_name %></strong> - Cursos: <%= student.rooms.length %></h5>
-          <p><small><%= student.is_converted == true ? "🟩 Cliente " : "🟥 Prospecto" %> - Ultimo contacto:  <%= student.last_contact == nil  ? "Registrar fecha" : student.last_contact.strftime('%d-%m-%Y')  %> - ¿Cancelo? <%= student.is_cancelled == true ? "SI" : "NO" %></small></p>
-          <p>Telefono: <%=student.contact_phone%></p>
-          <p>Responsable: <%= student.full_name_contact %>
+              <h5><strong><%= student.first_name %> <%= student.last_name %></strong> - Cursos Anotados: <%= student.rooms.length %> Pagados: <%= paid_courses %> </h5>
+              <p><small><%= paid_courses >= 1 ? "🟩 Cliente " : "🟥 Prospecto" %> - Ultimo contacto:  <%= student.last_contact == nil  ? "Registrar fecha" : student.last_contact.strftime('%d-%m-%Y')  %> - ¿Cancelo? <%= student.is_cancelled == true ? "SI" : "NO" %></small></p>
+              <p>Telefono: <%=student.contact_phone%></p>
+              <p>Responsable: <%= student.full_name_contact %>
         </div>
 
         <div class="notification-actions">
