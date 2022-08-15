@@ -182,18 +182,23 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
       <%= link_to "Volver", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
       <% if user_signed_in?  %>
       <% if current_user.is_admin? %>
-        <ul>
-          <%= link_to "Editar Curso", edit_course_path, class: 'custom-btn btn custom-link mt-3' %>
-          <%= link_to "Eliminar Curso",
-            course_path(@course),
-            data: {method: :delete, confirm: "Estas Seguro?"},class: 'custom-btn btn custom-link mt-3'
-          %>
-        </ul>
+      <%= link_to "Editar Curso", edit_course_path, class: 'custom-btn btn custom-link mt-3' %>
+      <%= link_to "Eliminar Curso",
+        course_path(@course),
+        data: {method: :delete, confirm: "Estas Seguro?"},class: 'custom-btn btn custom-link mt-3'
+      %>
+
+
+    <div class="container m-3">
+      <% rooms = Room.where(course_id: params[:id]) %>
+      <h3 class="" > Alumnos Inscriptos: <%= rooms.length %></h3>
+            <% rooms.each do |room| %>
+              <p>Nombre: <%= room.student.first_name %> <%= room.student.last_name  %> Pago:<%= room.is_paid %>             <%= link_to "Ver Estudiante", student_path(room.student.id), class: "btn"%></p>
+            <% end %>
+    </div>
 
 
 
-        <% room = Room.where(course_id: 15) %>
-         <%= room %>
 
 
         <% else %>
