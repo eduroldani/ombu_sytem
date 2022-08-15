@@ -191,10 +191,12 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
 
     <div class="container m-3">
       <% rooms = Room.where(course_id: params[:id]) %>
-      <h3 class="" > Alumnos Inscriptos: <%= rooms.length %></h3>
+      <h3 class="" > Alumnos Inscriptos al curso: <%= @course.name %> >> <%= rooms.length %></h3>
+            <ol>
             <% rooms.each do |room| %>
-              <p>Nombre: <%= room.student.first_name %> <%= room.student.last_name  %> Pago:<%= room.is_paid %>             <%= link_to "Ver Estudiante", student_path(room.student.id), class: "btn"%></p>
+              <li class="mt-3" > | Nombre: <%= room.student.first_name %> <%= room.student.last_name  %> | Pago: <%= room.is_paid == true ? "Si" : "No" %>  | <%= link_to "Ver Estudiante", student_path(room.student.id)%> |</li>
             <% end %>
+            </ol>
     </div>
 
 
