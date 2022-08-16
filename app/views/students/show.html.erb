@@ -18,7 +18,7 @@
         <p><%= @paid_courses >= 1 ? "🟩 Cliente " : "🟥 Prospecto" %></p>
         <strong><p>Cursos Pagados: <%= @paid_courses %></p></strong>
         <p>Medio: <%=@student.channel%></p>
-        <p>Autorizado para redes: <%= @student.allow_social == true ? "📸" : "📵" %></p>
+        <p>Autorizado para redes: <%= @student.allow_social == true ? "📸 SI" : "📵 NO" %></p>
       </div>
 
         <%= image_tag("robot.jpg", class: "card-trip-user avatar-bordered") %>
