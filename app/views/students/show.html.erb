@@ -59,7 +59,7 @@
   <% @rooms.each do |room| %>
   <div class="notification">
       <div class="notification-content d-flex">
-        <h5><strong> Curso: <%= room.course.name %>
+        <h5><strong> Curso: <%= room.course.name %> | Fecha:  <%= room.course.date.strftime("%-d.%-m.%y") %>
           <p>Pago: <%= room.is_paid == true ? "SI 🟩" : "NO 🟥" %></p>
       </div>
 
