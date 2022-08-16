@@ -26,10 +26,22 @@ class RoomsController < ApplicationController
 
     def destroy
       @student = Student.find(params[:student_id])
-      @room = Room.find_by(student_id: @student)
+      @room = Room.find_by(student_id: @student, id: params[:id])
       @room.destroy
       # No need for app/views/restaurants/destroy.html.erb
       redirect_to student_path(params[:student_id])
+    end
+
+    def update
+      @student = Student.find(params[:student_id])
+      @room = Room.find_by(student_id: @student, id: params[:id])
+      if @room.is_paid == true
+         @room.is_paid = false
+      else
+         @room.is_paid = true
+      end
+      @room.save
+        redirect_to student_path(@student)
     end
 
     private

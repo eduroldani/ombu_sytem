@@ -28,10 +28,10 @@ Rails.application.routes.draw do
     # Delete
     delete "courses/:id", to: "courses#destroy"
 
-  resources :students
+  # resources :students
 
-  resources :students do
-    resources :rooms
-  end
+    resources :students do
+      resources :rooms
+    end
 
 end

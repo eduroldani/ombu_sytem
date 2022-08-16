@@ -64,9 +64,13 @@
       </div>
 
       <div class="notification-actions">
-      <%= link_to "Quitar",
-            student_room_path(room.student_id),
+      <%= link_to "Quitar del curso",
+            student_room_path(student_id: params[:id], id: room),
             data: {method: :delete, confirm: "Estas Seguro?"},class: ''
+        %>
+        <%= link_to "Pago /No Pago",
+        student_room_path(student_id: params[:id], id: room),
+        data: {method: :patch, confirm: "Estas Seguro?"},class: ''
         %>
 
       </div>
