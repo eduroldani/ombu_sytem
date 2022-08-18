@@ -11,7 +11,8 @@
         <h2><%=@student.first_name%>  <%=@student.last_name%> </h2>
         <p>Email: <%=@student.contact_email%></p>
         <p>Telefono: <%=@student.contact_phone%></p>
-        <p>Fecha de Nacimiento: <%=@student.date_of_birth.strftime('%d-%m-%Y')%></p>
+        <p>Edad : <%= ((Date.today-@student.date_of_birth).to_i)/365 %></p>
+        <p>Fecha de Nacimiento: <%= @student.date_of_birth.strftime('%d-%m-%Y') %></p>
         <p>Colegio: <%=@student.school%></p>
         <p>Persona Responsable: <%=@student.full_name_contact%></p>
         <%# <p><%= @student.is_converted == true ? "🟩 Cliente " : "🟥 Prospecto" %>

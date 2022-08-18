@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all.order("created_at DESC")
-    
+
   end
 
   def show
@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
       @student = Student.find(params[:id])
       @student.destroy
     #no need for app/views/restaurants/destroy.html.erb
-       redirect_to students_path
+       redirect_to students_path, status: :see_other
      end
 
     private

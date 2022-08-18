@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
     get "/courses/3d", to: "courses#tresd", as: :courses_design
 
-
     # Read all
     get "/courses", to: "courses#index", as: :courses
     # Create

@@ -31,7 +31,6 @@
 
         <div class="notification-actions">
           <%= link_to "Ver Mas", student_path(student),class: "far fa-eye-alt" %>
-          <%= link_to "Editar", edit_student_path(student) ,class: "far fa-eye-alt" %>
           <%= link_to "Eliminar",
             student_path(student),
             data: {method: :delete, confirm: "Estas Seguro?"},class: 'far fa-trash-alt'
