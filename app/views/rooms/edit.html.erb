@@ -1,0 +1,11 @@
+<div class="container m-3">
+  <h1>Editar Pagos</h1>
+<%= simple_form_for [@student, @room] do |f| %>
+     <%= f.association :course, collection: Course.order("created_at DESC"), label: false,
+                  label_method: lambda { |item| "Curso #{item.name} -- Dia: #{item.date.strftime("%-d.%-m.%y")} -- Precio: #{item.price}" }%>
+    <%= f.input :ammount, label: '¿Monto Pagado?'%>
+    <%= f.input :modified_price, label: '¿Precio especial total?'%>
+    <%= f.button :submit, "Editar",class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+    <% end %>
+
+</div>

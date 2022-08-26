@@ -1,9 +1,10 @@
 class RoomsController < ApplicationController
 
-
     def index
       @rooms = Room.all
     end
+
+
 
     def new
       @courses = Course.all
@@ -24,6 +25,30 @@ class RoomsController < ApplicationController
         end
       end
 
+
+    # def update
+    #   @student = Student.find(params[:student_id])
+    #   @room = Room.find_by(student_id: @student, id: params[:id])
+    #   if @room.is_paid == true
+    #      @room.is_paid = false
+    #   else
+    #      @room.is_paid = true
+    #   end
+    #   @room.save
+    #     redirect_to student_path(@student)
+    # end
+
+    def edit
+      @student =  Student.find(params[:student_id])
+      @room = Room.find(params[:id])
+    end
+
+    def update
+      @room = Room.find(params[:id])
+      @room.update(room_params)
+      redirect_to student_path(params[:student_id])
+    end
+
     def destroy
       @student = Student.find(params[:student_id])
       @room = Room.find_by(student_id: @student, id: params[:id])
@@ -32,22 +57,10 @@ class RoomsController < ApplicationController
       redirect_to student_path(params[:student_id])
     end
 
-    def update
-      @student = Student.find(params[:student_id])
-      @room = Room.find_by(student_id: @student, id: params[:id])
-      if @room.is_paid == true
-         @room.is_paid = false
-      else
-         @room.is_paid = true
-      end
-      @room.save
-        redirect_to student_path(@student)
-    end
-
     private
 
      def room_params
-       params.require(:room).permit(:is_paid, :course_id)
+       params.require(:room).permit(:is_paid, :course_id,:ammount, :modified_price)
      end
 
 end
