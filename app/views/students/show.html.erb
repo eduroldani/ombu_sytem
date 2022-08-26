@@ -37,31 +37,40 @@
     </ul>
   </div>
 
+<h3 class="mt-3">Agregar a un curso: </h3>
+
   <div class="container border m-1 p-3 shadow">
-    <h3>Agregar a un curso: </h3>
     <p> Agregar a: <%= @student.first_name %> <%= @student.last_name %></p>
     <%= simple_form_for [@student, @room] do |f| %>
      <%= f.association :course, collection: Course.order("created_at DESC"), label: false,
-                  label_method: lambda { |item| "Curso #{item.name} --- Dia: #{item.date.strftime("%-d.%-m.%y")}" }%>
-
-    <%= f.input :is_paid, label: "Pago?" %>
+                  label_method: lambda { |item| "Curso #{item.name} -- Dia: #{item.date.strftime("%-d.%-m.%y")} -- Precio: #{item.price}$" }%>
+    <%= f.input :modified_price, label: '¿Precio Descuento?'%>
+    <%= f.input :ammount, label: '¿Monto Pagado?'%>
     <%= f.button :submit, "Agregar a curso",class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
     <% end %>
   </div>
 
 
 <div class="mt-3">
-  <h3>Cursos de <%= @student.first_name %>: </h3>
-  <h4>Total de cursos: <%= @student.rooms.length %> </h4>
+  <h3>Cursos de <%= @student.first_name %> - Total de cursos: <%= @student.rooms.length %></h3>
 
-
-
-<div class="container">
+<div class="">
   <% @rooms.each do |room| %>
   <div class="notification shadow">
       <div class="notification-content d-flex">
-        <h5><strong> Curso: <%= room.course.name %> | Fecha:  <%= room.course.date.strftime("%-d.%-m.%y") %>
-          <p>Pago: <%= room.is_paid == true ? "SI 🟩" : "NO 🟥" %></p>
+
+        <h5 class="m-3"><strong> Curso: <%= room.course.name %> | Fecha:  <%= room.course.date.strftime("%-d.%-m.%y") %>
+        <div class="d-flex">
+          <div class="d-block p-2">
+            <p>Costo Curso: <%= room.course.price %>$</p>
+            <p>Monto con Descuento: <%= room.modified_price %>$</p>
+            <p>Monto Pagado : <%= room.ammount %>$</p>
+          </div>
+          <div class="d-block p-2">
+            <p>Diferencia a pagar: <%= room.modified_price - room.ammount %>$</p>
+            <p>Pago Todo: <%= room.modified_price - room.ammount == 0 ? "SI 🟩" : "NO 🟥" %></p>
+           </div>
+          </div>
       </div>
 
       <div class="notification-actions">
@@ -69,12 +78,16 @@
             student_room_path(student_id: params[:id], id: room),
             data: {method: :delete, confirm: "Estas Seguro?"},class: ''
         %>
-        <%= link_to "Pago /No Pago",
-        student_room_path(student_id: params[:id], id: room),
-        data: {method: :patch, confirm: "Estas Seguro?"},class: ''
-        %>
-
+        <%= link_to "Editar Pagos",
+        edit_student_room_path(id: room.id, student_id: params[:id]),class: ''%>
       </div>
+
+        <div>
+
+
+
+    </div>
+
 
   </div>
    <% end %>

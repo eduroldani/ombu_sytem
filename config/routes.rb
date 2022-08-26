@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
+  root to: "pages#home"
   devise_for :users
 
   authenticate :user, ->(user) { user.is_admin? } do
     mount Blazer::Engine, at: "blazer"
   end
 
-
-
-    root to: "pages#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
     get "/courses/robotica", to: "courses#robotica", as: :courses_robotic
@@ -32,5 +30,7 @@ Rails.application.routes.draw do
     resources :students do
       resources :rooms
     end
+
+    
 
 end

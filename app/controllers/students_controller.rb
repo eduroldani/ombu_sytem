@@ -28,8 +28,6 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-
-
     def update
       @student = Student.find(params[:id])
       @student.update(student_params)
@@ -57,7 +55,7 @@ class StudentsController < ApplicationController
     private
 
      def student_params
-       params.require(:student).permit(:first_name, :last_name,:contact_email,:contact_phone, :date_of_birth, :school, :is_converted, :channel, :photo, :allow_social, :full_name_contact, :last_contact,:is_cancelled )
+       params.require(:student).permit(:first_name, :last_name,:contact_email,:contact_phone, :date_of_birth, :school, :is_converted, :channel, :photo, :allow_social, :full_name_contact, :last_contact,:is_cancelled, :school_hours )
      end
 
 end
