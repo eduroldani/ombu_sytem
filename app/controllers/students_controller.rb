@@ -1,8 +1,11 @@
 class StudentsController < ApplicationController
 
   def index
-    @students = Student.all.order("created_at DESC")
-
+    if params[:query].present?
+      @students = Student.search_student(params[:query])
+    else
+      @students = Student.all.order("created_at DESC")
+    end
   end
 
   def show
