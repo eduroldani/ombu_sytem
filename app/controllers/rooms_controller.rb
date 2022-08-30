@@ -46,6 +46,7 @@ class RoomsController < ApplicationController
     def update
       @room = Room.find(params[:id])
       @room.update(room_params)
+      raise
       redirect_to student_path(params[:student_id])
     end
 
