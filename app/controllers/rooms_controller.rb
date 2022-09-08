@@ -18,19 +18,23 @@ class RoomsController < ApplicationController
       @course =  Course.find(params[:room][:course_id] )
       @room.course = @course
       @room.student = @student
-      if @room.course.price == @room.ammount
-        return @room.is_paid = true
-      elsif @room.modified_price == @room.ammount
+      if @room.course.price == @room.ammount || @room.modified_price == @room.ammount
         @room.is_paid = true
-      end
-
+        @room.save
         if @room.save
           redirect_to student_path(params[:student_id])
         else
           render :new, status: :unprocessable_entity
         end
-
-
+      elsif @room.course.price != @room.ammount || @room.modified_price != @room.ammount
+        @room.is_paid = false
+        @room.save
+        if @room.save
+          redirect_to student_path(params[:student_id])
+        else
+          render :new, status: :unprocessable_entity
+        end
+      end
       end
 
 
@@ -54,8 +58,13 @@ class RoomsController < ApplicationController
     def update
       @room = Room.find(params[:id])
       @room.update(room_params)
-      @room.is_paid = true if @room.course.price == @room.ammount || @room.modified_price == @room.ammount
-      @room.save
+      if @room.course.price == @room.ammount || @room.modified_price == @room.ammount
+        @room.is_paid = true
+        @room.save
+      elsif @room.course.price != @room.ammount || @room.modified_price != @room.ammount
+        @room.is_paid = false
+        @room.save
+      end
       redirect_to student_path(params[:student_id])
     end
 
