@@ -12,6 +12,12 @@ class CoursesController < ApplicationController
     @courses = Course.where(category: 'Robotica')
   end
 
+
+  def all_courses
+    @courses = Course.all.order("created_at DESC")
+  end
+
+
   def tresd
     @courses = Course.where(category: 'Diseño Y Impresion 3D')
   end

@@ -65,6 +65,7 @@
             <p>Costo Curso: <%= room.course.price %>$</p>
             <p>Monto con Descuento: <%= room.modified_price %>$</p>
             <p>Monto Pagado : <%= room.ammount %>$</p>
+            <p>Pagado Total? : <%= room.is_paid ?  "🟩 Pagado " : "🟥 A Completar"%></p>
           </div>
 
           </div>

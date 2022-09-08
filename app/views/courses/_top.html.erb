@@ -1,3 +1,9 @@
     <%= link_to "Todos", courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
     <%= link_to "Cursos Robotica", courses_robotic_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
     <%= link_to "Cursos 3D", courses_design_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+
+    <% if user_signed_in?  %>
+    <% if current_user.is_admin? %>
+    <%= link_to "Todos los cursos - Privado ", all_courses_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+    <% end %>
+    <% end %>

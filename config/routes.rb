@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
     get "/courses/3d", to: "courses#tresd", as: :courses_design
 
+    get "/courses/todos", to: "courses#all_courses", as: :all_courses
+
     # Read all
     get "/courses", to: "courses#index", as: :courses
     # Create
@@ -31,6 +33,6 @@ Rails.application.routes.draw do
       resources :rooms
     end
 
-    
+
 
 end
