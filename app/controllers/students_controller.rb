@@ -8,6 +8,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def paid
+      @students = Student.left_outer_joins(:rooms).distinct.where("rooms.is_paid = true").order("created_at DESC")
+  end
+
   def show
     @student = Student.find(params[:id])
     @room = Room.new

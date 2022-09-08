@@ -29,9 +29,12 @@ Rails.application.routes.draw do
 
   # resources :students
 
+    get "/students/paid", to: "students#paid", as: :paid_students
+
     resources :students do
       resources :rooms
     end
+
 
 
 
