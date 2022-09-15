@@ -4,8 +4,6 @@ class RoomsController < ApplicationController
       @rooms = Room.all
     end
 
-
-
     def new
       @courses = Course.all
       @student = Student.find(params[:student_id])

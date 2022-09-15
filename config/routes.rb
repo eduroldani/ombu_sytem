@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
     get "/courses/robotica", to: "courses#robotica", as: :courses_robotic
-
+    get "/courses/talleres_gratuitos", to: "courses#talleres_gratuitos", as: :courses_free_courses
+    get "/courses/programacion", to: "courses#programacion", as: :courses_programming
     get "/courses/3d", to: "courses#tresd", as: :courses_design
-
     get "/courses/todos", to: "courses#all_courses", as: :all_courses
 
     # Read all

@@ -13,6 +13,16 @@ class CoursesController < ApplicationController
   end
 
 
+  def talleres_gratuitos
+    @courses = Course.where(category: 'Talleres Gratuitos')
+  end
+
+
+  def programacion
+    @courses = Course.where(category: 'Programacion')
+  end
+
+
   def all_courses
     @courses = Course.all.order("created_at DESC")
   end
