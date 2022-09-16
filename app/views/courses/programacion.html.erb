@@ -1,29 +1,9 @@
 
 <div class="container">
-  <h2 class= "mt-3" >Todos los cursos de Robotica:</h2>
+  <h2 class= "mt-3" >Todos los cursos de programacion para jovenes:</h2>
   <%= render "top" %>
   <div class="row">
-      <% if @courses.count == 0 %>
-
-      <div class="venue-thumb bg-white shadow-lg mt-5 p-0">
-          <div class="venue-info-title">
-           <h2 class="text-white mb-0">Proximamente habra mas cursos de en Ombu Hub</h2>
-          </div>
-          <div class="venue-info-body">
-            <h4 class="d-flex " >
-                Envianos un mail o un whatsapp y en cuento el curso este disponible te contactaremos.
-            </h4>
-            <h5 class="mt-4 mb-3">
-            <a href="mailto:ombuhub@gmail.com" class="">
-            ombuhub@gmail.com
-            </a>
-            </h5>
-          </div>
-        </div>
-
-      <% end %>
-
-
+      <%= render 'zero' %>
        <% @courses.each do |course| %>
         <% if course.date >= Date.today %>
           <div class="col-lg-3 col-12 m-4">

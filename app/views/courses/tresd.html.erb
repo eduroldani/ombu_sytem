@@ -1,8 +1,9 @@
 
 <div class="container">
-  <h2 class= "mt-3" >Todos los cursos de Robotica:</h2>
+  <h2 class= "mt-3" >Todos los cursos de Diseño e Impresion 3D:</h2>
   <%= render "top" %>
   <div class="row">
+      <%= render 'zero' %>
        <% @courses.each do |course| %>
         <% if course.date >= Date.today %>
           <div class="col-lg-3 col-12 m-4">

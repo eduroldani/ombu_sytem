@@ -68,3 +68,4 @@ gem "pg_search"
 
 gem "blazer"
 
+gem 'simple-form-datepicker', '~> 0.1.3'
