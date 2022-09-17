@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @courses = Course.search_by_name_short_description(params[:query])
     else
-      @courses = Course.where('date >= ?', Date.today).order("date DESC")
+      @courses = Course.where('date >= ?', Date.today).order("date ASC")
     end
   end
 
@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
 
 
   def all_courses
-    @courses = Course.all.order("created_at DESC")
+    @courses = Course.all.order("created_at ASC")
   end
 
 
