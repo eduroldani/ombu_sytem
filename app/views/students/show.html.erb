@@ -28,11 +28,11 @@
     </div>
 
     <ul>
-      <%= link_to "Eliminar",
+      <%= link_to "Eliminar Estudiante",
               student_path(@student),
               data: {method: :delete, confirm: "Estas Seguro?"},class: 'custom-btn custom-border-btn btn custom-link mt-3 me-3'
             %>
-      <%= link_to "Editar", edit_student_path,class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
+      <%= link_to "Editar Estudiante", edit_student_path,class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
       <%= link_to "Volver", students_path, class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
     </ul>
   </div>
@@ -44,6 +44,7 @@
     <%= simple_form_for [@student, @room] do |f| %>
      <%= f.association :course, collection: Course.order("created_at DESC"), label: false,
                   label_method: lambda { |item| "Curso #{item.name} -- Dia: #{item.date.strftime("%-d.%-m.%y")} -- Precio: #{item.price}$" }%>
+    <%= f.input :course_date, label: 'Dia del curso'%>
     <%= f.input :modified_price, label: '¿Precio Descuento?'%>
     <%= f.input :ammount, label: '¿Monto Pagado?'%>
     <%= f.button :submit, "Agregar a curso",class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>

@@ -77,7 +77,7 @@ class RoomsController < ApplicationController
     private
 
      def room_params
-       params.require(:room).permit(:is_paid, :course_id,:ammount, :modified_price)
+       params.require(:room).permit(:is_paid, :course_id,:ammount, :modified_price, :course_date)
      end
 
 end

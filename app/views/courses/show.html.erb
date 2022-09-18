@@ -206,11 +206,10 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
       <h4 class="" >Inscriptos a este curso: <%= rooms.length %></h4>
             <ol>
             <% rooms.each do |room| %>
-              <li class="mt-3" > | Nombre: <%= room.student.first_name %> <%= room.student.last_name  %> | Pago: <%= room.is_paid == true ? "Si" : "No" %>  | <%= link_to "Ver Estudiante", student_path(room.student.id)%> |</li>
+              <li class="mt-3" >  Nombre: <%= room.student.first_name %> <%= room.student.last_name  %> | Pago: <%= room.is_paid == true ? "Si 🟩" : "No 🟥 " %>   | Dia curso: <%= room.course_date %> | <%= link_to "Ver Estudiante", student_path(room.student.id)%></li>
             <% end %>
             </ol>
     </div>
-
 
 
 
