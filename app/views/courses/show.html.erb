@@ -14,9 +14,13 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
                     <h2 class="text-white mb-4"><u class="text-info"><%=@course.name.capitalize%></u> </h2>
 
                     <div class="d-flex justify-content-center align-items-center">
+                     <% if @course.is_confirm == false %>
+                        <span class="date-text">Fecha a confirmar</span>
+                        <span class="location-text">Mantenete enterado aqui</span>
+                        <% else %>
                         <span class="date-text"><%= @course.date > Date.today ? " Proximamente " : " Expirado " %></span>
-
                         <span class="location-text"><%= @course.date.strftime('%d-%m-%Y') %></span>
+                      <% end %>
                     </div>
                 </div>
             </div>
@@ -137,9 +141,15 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
                             <img src="images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg" class="img-fluid speakers-image mt-5" alt="">
 
                             <div class="speakers-info">
-                                <h5 class="speakers-title mb-0">Dia: <%=@course.date.strftime('%d-%m-%Y')%></h5>
 
-                                <p class="speakers-text mb-0"><%= @course.date > Date.today ? " Proximamente " : " Expirado " %></p>
+                            <% if @course.is_confirm == false %>
+                              <h5 class="speakers-title mb-0">Fecha a confirmar</h5>
+                              <p class="speakers-text mb-0">Proximamente</p>
+                              <% else %>
+                              <h5 class="speakers-title mb-0">Dia: <%=@course.date.strftime('%d-%m-%Y')%></h5>
+                              <p class="speakers-text mb-0"><%= @course.date > Date.today ? " Proximamente " : " Expirado " %></p>
+                            <% end %>
+
 
                                 <ul class="social-icon">
                                     <li><a href="#" class="social-icon-link bi-instagram"></a></li>

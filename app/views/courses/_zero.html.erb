@@ -1,11 +1,25 @@
 <% if @courses.count == 0 %>
-      <div class="venue-thumb bg-white mt-5">
-          <div class="venue-info-title ">
-           <h2 class="text-white mb-0">Proximamente habra mas cursos de en Ombu Hub</h2>
+<div class="p-3">
+      <div class="venue-thumb bg-white shadow-lg mt-5 p-0">
+          <div class="venue-info-title">
+           <h2 class="text-white p-0">Proximamente habra mas cursos en Ombu Hub</h2>
           </div>
           <div class="venue-info-body">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScH1rcym3q1z_MhsFsHrVhen3T15Ye7Nt-pIJktjaPqkCVm3w/viewform?embedded=true" width="100%" height="800px" >Loading…</iframe>
+            <h4 class="d-flex " >
+                Contactanos por Whatsapp o dejanos tus datos en el formulario y estaremos en contacto contigo.
+            </h4>
+            <h5 class="mt-4 mb-3">
+            <a href="https://api.whatsapp.com/send?phone=+5493815752672&amp;text=Hola Ombu Hub%21%20." target="_blank" style="font-size: 36px;
+          color: green;"><i class="fa fa-whatsapp float-button"></i>
+           WhatsApp </a>
+           <br>
+          <br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScH1rcym3q1z_MhsFsHrVhen3T15Ye7Nt-pIJktjaPqkCVm3w/viewform?usp=sf_link" target="_blank" style="font-size: 36px; "><i class="fa-solid fa-pen"></i>
+          Formulario
+            </a>
+            </h5>
+
           </div>
         </div>
-
+</div>
 <% end %>

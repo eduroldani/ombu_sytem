@@ -4,32 +4,32 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @courses = Course.search_by_name_short_description(params[:query])
     else
-      @courses = Course.where('date >= ?', Date.today).order("date ASC")
+      @courses = Course.where(is_hide: false).order("created_at ASC")
     end
   end
 
   def robotica
-    @courses = Course.where(category: 'Robotica').and(Course.where('date >= ?', Date.today))
+    @courses = Course.where(category: 'Robotica').and(Course.where(is_hide: false))
   end
 
 
   def talleres_gratuitos
-    @courses = Course.where(category: 'Talleres Gratuitos').and(Course.where('date >= ?', Date.today)).and(Course.where(is_hide: false))
+    @courses = Course.where(category: 'Talleres Gratuitos').and(Course.where(is_hide: false))
   end
 
 
   def programacion
-    @courses = Course.where(category: 'Programacion').and(Course.where('date >= ?', Date.today))
+    @courses = Course.where(category: 'Programacion').and(Course.where(is_hide: false))
   end
 
 
   def all_courses
-    @courses = Course.all.order("created_at ASC")
+    @courses = Course.all.order("created_at DESC")
   end
 
 
   def tresd
-    @courses = Course.where(category: 'Diseño Y Impresion 3D').and(Course.where('date >=   ?', Date.today))
+    @courses = Course.where(category: 'Diseño Y Impresion 3D')
   end
 
   def show
@@ -72,7 +72,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo, :what, :how, :project, :capacity,:category, :is_hide )
+    params.require(:course).permit(:name, :short_description, :long_description, :date, :price, :minimun_age, :max_age, :photo, :what, :how, :project, :capacity,:category, :is_hide, :is_confirm )
   end
 
 end

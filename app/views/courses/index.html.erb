@@ -5,7 +5,6 @@
   <div class="row">
       <%= render 'zero' %>
        <% @courses.each do |course| %>
-        <% if course.date >= Date.today %>
           <div class="col-lg-3 col-12 m-4">
                 <div class="card shadow" style="width: 18rem; height: 100%; ">
                       <%= cl_image_tag course.photo.key, class: "card-img-top", height: 150 %>
@@ -13,14 +12,16 @@
                   : space-between;">
                         <h5 class="card-title"><%=course.name.upcase%></h5>
                         <p class="card-text"><%=course.short_description.upcase%></p>
+                        <% if course.is_confirm == false %>
+                        <h5 class="mt-4 mb-3">Fecha a confirmar</h5>
+                        <% else %>
                         <h5 class="mt-4 mb-3"><%= course.date.strftime('%d-%m-%Y') %>
                         <br><%= course.date > Date.today ? "Proximamente " : "Expirado "%></h5>
+                      <% end %>
                         <%= link_to "Ver Mas", course_path(course),class: "custom-btn custom-border-btn btn custom-link mt-3 me-3" %>
                       </div>
                 </div>
             </div>
-          <%else  %>
-        <% end %>
            <% end %>
        </div>
 

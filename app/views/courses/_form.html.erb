@@ -3,6 +3,7 @@
   <%= f.input :category,label: 'Categoria', collection: ["Robotica", "Diseño Y Impresion 3D","Talleres Gratuitos","Programacion"], required: true  %>
   <%= f.input :short_description, placeholder: 'Descipcion corta max 100 caracteres',label: 'Descripcion Corta:' %>
   <%= f.input :long_description, placeholder: 'Descipcion larga', label: 'Descripcion Larga:' %>
+  <%= f.input :is_confirm, label: '¿Fecha de curso confirmada?'%>
   <%= f.input :date %>
   <%= f.input :what, placeholder: '¿Que van a aprender?', label: 'Que van a aprender?'%>
   <%= f.input :how, placeholder: '¿Como van a aprender?', label: 'Como van a aprender?'%>
@@ -12,6 +13,6 @@
   <%= f.input :minimun_age, placeholder: '¿Edad Minima?' , label: 'Edad Minima:'%>
   <%= f.input :max_age, placeholder: '¿Edad maxima?', label: 'Edad Maxima:' %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :is_hide, label: '¿Mostrar Curso?'%>
-  <%= f.button :submit,  "Enviar", class: "btn btn-primary" %>
+  <%= f.input :is_hide, label: '¿Ocultar Curso?'%>
+  <%= f.button :submit,  "Guardar", class: "btn btn-primary" %>
 <% end %>
