@@ -4,32 +4,32 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @courses = Course.search_by_name_short_description(params[:query])
     else
-      @courses = Course.where(is_hide: false).order("created_at ASC")
+      @courses = Course.where(is_hide: false).order("date DESC")
     end
   end
 
   def robotica
-    @courses = Course.where(category: 'Robotica').and(Course.where(is_hide: false))
+    @courses = Course.where(category: 'Robotica').and(Course.where(is_hide: false)).order("date DESC")
   end
 
 
   def talleres_gratuitos
-    @courses = Course.where(category: 'Talleres Gratuitos').and(Course.where(is_hide: false))
+    @courses = Course.where(category: 'Talleres Gratuitos').and(Course.where(is_hide: false)).order("date DESC")
   end
 
 
   def programacion
-    @courses = Course.where(category: 'Programacion').and(Course.where(is_hide: false))
+    @courses = Course.where(category: 'Programacion').and(Course.where(is_hide: false)).order("date DESC")
   end
 
 
   def all_courses
-    @courses = Course.all.order("created_at DESC")
+    @courses = Course.all.order("created_at DESC").order("date DESC")
   end
 
 
   def tresd
-    @courses = Course.where(category: 'Diseño Y Impresion 3D')
+    @courses = Course.where(category: 'Diseño Y Impresion 3D').order("date DESC")
   end
 
   def show

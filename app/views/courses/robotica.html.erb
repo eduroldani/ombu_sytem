@@ -5,7 +5,6 @@
   <div class="row">
         <%= render 'zero' %>
        <% @courses.each do |course| %>
-        <% if course.date >= Date.today %>
           <div class="col-lg-3 col-12 m-4">
                 <div class="card shadow" style="width: 18rem; height: 100%; ">
                       <%= cl_image_tag course.photo.key, class: "card-img-top", height: 150 %>
@@ -19,8 +18,6 @@
                       </div>
                 </div>
             </div>
-          <%else  %>
-        <% end %>
            <% end %>
        </div>
 
