@@ -30,3 +30,19 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card {
+  width: 300px;
+  height: 100%;
+  h6 {
+    color: var(--dark-color);
+  }
+  h5 {
+    font-weight: lighter;
+  }
+  p {
+    color: var(--primary-color);
+    font-weight: bold;
+
+  }
+}

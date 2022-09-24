@@ -34,8 +34,8 @@
   --h5-font-size:                 24px;
   --h6-font-size:                 22px;
   --p-font-size:                  18px;
-  --menu-font-size:               16px;
-  --copyright-text-font-size:     16px;
+  --menu-font-size:               20px;
+  --copyright-text-font-size:     20px;
 
   --font-weight-normal:           400;
   --font-weight-medium:           500;
@@ -250,7 +250,8 @@ strong {
 .custom-btn,
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,
 .navbar-nav .nav-link.custom-btn {
-  background: var(--navbar-bg-color);
+  // background: var(--navbar-bg-color);
+  background: #25d366;
   border-radius: 100px;
   color: var(--white-color);
   font-size: var(--copyright-text-font-size);
@@ -260,7 +261,8 @@ strong {
 
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,
 .navbar-nav .nav-link.custom-btn {
-  background: var(--secondary-color);
+  // background: var(--secondary-color);
+  background: #25d366;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,

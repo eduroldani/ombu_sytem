@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_18_215106) do
+ActiveRecord::Schema.define(version: 2022_09_23_111111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,17 @@ ActiveRecord::Schema.define(version: 2022_09_18_215106) do
     t.string "category"
     t.boolean "is_hide", default: false
     t.boolean "is_confirm", default: false
+    t.string "level", default: "Nivel 1"
+  end
+
+  create_table "knowledges", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "slides_link"
+    t.string "online_meeting_link"
+    t.string "documents_link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
