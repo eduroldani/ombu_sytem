@@ -8,7 +8,11 @@
                 <div class="card-body" style="height: 100%; display: flex;flex-direction: column;justify-content
             : space-between;">
                   <h6 class="card-title"><%=course.name.upcase%></h6>
+                  <% if course.level.nil?%>
+                  <p>Nivel a confirmar</p>
+                  <% else %>
                   <p><%=course.level.upcase%></p>
+                  <% end %>
                   <% if course.is_confirm == false %>
                   <p class="mt-4 mb-3">Fecha a confirmar</p>
                   <% else %>
