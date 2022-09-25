@@ -11,7 +11,7 @@
                   <% if course.level.nil?%>
                   <p>Nivel a confirmar</p>
                   <% else %>
-                  <p><strong><%=course.level.upcase%></strong></p>
+                  <p>Nivel: <%=course.level.upcase%></p>
                   <% end %>
                   <% if course.is_confirm == false %>
                   <p class="mt-4 mb-3">Fecha a confirmar</p>

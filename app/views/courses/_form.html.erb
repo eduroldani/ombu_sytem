@@ -1,7 +1,7 @@
 <%= simple_form_for @course do |f| %>
   <%= f.input :name, label: 'Nombre del Curso'%>
   <%= f.input :category,label: 'Categoria', collection: ["Robotica", "Diseño Y Impresion 3D","Talleres Gratuitos","Programacion"], required: true  %>
-  <%= f.input :level,label: 'Nivel', collection: ["Nivel 1", "Nivel 2","Nivel 3","Nivel 4", "Para Todos"], required: true  %>
+  <%= f.input :level,label: 'Nivel', required: true  %>
   <%= f.input :short_description, placeholder: 'Descipcion corta max 100 caracteres',label: 'Descripcion Corta:' %>
   <%= f.input :long_description, placeholder: 'Descipcion larga', label: 'Descripcion Larga:' %>
   <%= f.input :is_confirm, label: '¿Fecha de curso confirmada?'%>

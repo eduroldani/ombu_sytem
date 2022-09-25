@@ -11,12 +11,12 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
                 <div class="hero-text px-5 py-4 shadow-lg" style="background-color: rgba(0,64,110,0.8)
 ;">
 
-                    <h2 class="text-white mb-4"><u class="text-info"><%=@course.name.capitalize%></u> </h2>
+                    <h2 class="text-white mb-4"><u class="text-info"><%=@course.name.capitalize%></u></h2>
 
                     <div class="d-flex justify-content-center align-items-center">
                      <% if @course.is_confirm == false %>
                         <span class="date-text">Fecha a confirmar</span>
-                        <span class="location-text">Mantenete enterado aqui</span>
+                        <span class="location-text"><a style="color: var(--secondary-color)" href="https://forms.gle/tATguwmGKCJTef9C9">Registrate aqui</a></span>
                         <% else %>
                         <span class="date-text"><%= @course.date > Date.today ? " Proximamente " : " Expirado " %></span>
                         <span class="location-text"><%= @course.date.strftime('%d-%m-%Y') %></span>
@@ -34,7 +34,7 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
         <div class="row">
 
             <div class="col-lg-10 col-12">
-                <h2 class="mb-4">Sobre <u class="text-info">el Curso</u></h2>
+                <h2 class="mb-4">Sobre <u class="text-info">el Curso - Nivel: <%=@course.level %></u></h2>
             </div>
 
             <div class="col-lg-6 col-12">
@@ -66,7 +66,7 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
 
             <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
                 <div class="speakers-text-info">
-                    <h2 class="mb-4">Mas <u class="text-info">Informacion</u></h2>
+                    <h2 class="mb-4">Mas <u class="text-info">Informacion del curso: </u></h2>
 
                     <p>Proyecto Final: <%=@course.project %></p>
                 </div>
@@ -135,6 +135,8 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
                             </div>
                         </div>
                     </div>
+
+
 
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="speakers-thumb speakers-thumb-small">

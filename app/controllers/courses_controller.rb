@@ -4,12 +4,12 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @courses = Course.search_by_name_short_description(params[:query])
     else
-      @courses = Course.where(is_hide: false).order("date DESC")
+      @courses = Course.where(is_hide: false).order("Level ASC")
     end
   end
 
   def robotica
-    @courses = Course.where(category: 'Robotica').and(Course.where(is_hide: false)).order("date DESC")
+    @courses = Course.where(category: 'Robotica').and(Course.where(is_hide: false)).order("Level ASC")
   end
 
 
@@ -19,7 +19,8 @@ class CoursesController < ApplicationController
 
 
   def programacion
-    @courses = Course.where(category: 'Programacion').and(Course.where(is_hide: false)).order("date DESC")
+    @courses = Course.where(category: 'Programacion').and(Course.where(is_hide: false)).order("Level ASC")
+
   end
 
 
@@ -29,7 +30,8 @@ class CoursesController < ApplicationController
 
 
   def tresd
-    @courses = Course.where(category: 'Diseño Y Impresion 3D').order("date DESC")
+    @courses = Course.where(category: 'Diseño Y Impresion 3D').order("Level ASC")
+
   end
 
   def show
