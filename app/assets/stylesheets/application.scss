@@ -47,6 +47,10 @@ body {
     font-family: var(--body-font-family);
 }
 
+body, html {
+  height: 100%;
+}
+
 
 /*---------------------------------------
   TYPOGRAPHY
@@ -1061,7 +1065,7 @@ strong {
   }
 
   .hero-text {
-    width: 100%;
+    width: 90%;
   }
 
   .site-footer .social-icon-link {

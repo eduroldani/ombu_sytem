@@ -1,6 +1,7 @@
 
 <section class="hero hero-customized" id="section_1"
-style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @course.photo.key, height: 800, crop: :fill %>'); background-repeat: no-repeat;  background-attachment: scroll; background-position: bottom center;background-size: cover;">
+style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @course.photo.key %>'); background-repeat: no-repeat;  background-attachment: scroll; background-position: center;background-size: cover; height: 100%;
+">
 
 
 
@@ -11,7 +12,8 @@ style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('
                 <div class="hero-text px-5 py-4 shadow-lg" style="background-color: rgba(0,64,110,0.8)
 ;">
 
-                    <h2 class="text-white mb-4"><u class="text-info"><%=@course.name.capitalize%></u></h2>
+                    <h2 class="text-white mb-4"><u class="text-info"><%= @course.name.upcase %></u>
+                    <br>NIVEL: <%= @course.level %></h2>
 
                     <div class="d-flex justify-content-center align-items-center">
                      <% if @course.is_confirm == false %>
