@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
 
 
   def all_courses
-    @courses = Course.all.order("created_at DESC").order("date DESC")
+    @courses = Course.all.order("created_at DESC").order("category ASC").order("date DESC")
   end
 
 
