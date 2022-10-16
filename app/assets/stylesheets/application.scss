@@ -132,6 +132,7 @@ a {
 
 a:hover {
   color: var(--primary-color);
+
 }
 
 ::selection {
@@ -261,6 +262,30 @@ strong {
   font-size: var(--copyright-text-font-size);
   font-weight: var(--font-weight-bold);
   padding: 10px 20px;
+}
+
+.nav-link.click-scroll.btn-ins {
+  // background: var(--navbar-bg-color);
+  background: white;
+  border-radius: 100px;
+  color: var(--primary-color);;
+  font-size: var(--copyright-text-font-size);
+  font-weight: var(--font-weight-bold);
+  padding: 10px 20px;
+  text-align: center;
+
+}
+
+
+.nav-link.click-scroll.btn-ins:hover {
+  // background: var(--navbar-bg-color);
+  background: var(--primary-color);
+  border-radius: 100px;
+  color: white;
+  font-size: var(--copyright-text-font-size);
+  font-weight: var(--font-weight-bold);
+  padding: 10px 20px;
+  text-align: center;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,
