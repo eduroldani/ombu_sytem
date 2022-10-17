@@ -25,7 +25,10 @@
   --p-color:                      #717275;
   --highlight-icon-color:         #ff0100;
 
-  --body-font-family:             'DM Sans', sans-serif;
+  --h-font-family:              'Staatliches', cursive;
+  --p-font-family:              'Staatliches', cursive;
+  --body-font-family:           'Source Sans Pro', sans-serif;
+
 
   --h1-font-size:                 62px;
   --h2-font-size:                 48px;
@@ -71,18 +74,19 @@ h4,
 h5,
 h6 {
   font-weight: var(--font-weight-bold);
-  letter-spacing: -1px;
+  letter-spacing: 1px;
+  font-family: var(--h-font-family)
 }
 
 h1 {
   font-size: var(--h1-font-size);
-  letter-spacing: -2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: var(--h2-font-size);
-  letter-spacing: -2px;
+  letter-spacing: 1px;
 }
 
 h3 {
