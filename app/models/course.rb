@@ -17,11 +17,13 @@ class Course < ApplicationRecord
   validates :project, presence: true
 
   include PgSearch::Model
+
   pg_search_scope :search_by_name_short_description,
   against: [ :name, :short_description ],
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
 
+#commet
 
 end
